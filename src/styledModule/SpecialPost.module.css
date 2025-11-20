@@ -1,0 +1,37 @@
+
+/* @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); */
+
+.special-post__container{
+    /* background: rgb(196, 196, 196); */
+    background: #25CC0F;
+    background: linear-gradient(to bottom right, #00ffb7 0%, #ff04b0 96%);
+    filter: saturate(140%);
+    /* background: #B8E1FC;
+    background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #4d4d4d 100%); */
+    box-shadow: 0 -7px 43px inset whitesmoke, 0 0 20px transparent;
+}
+
+#special-post__titr{
+    color: var(--bolder-titr-text-color) !important;
+    text-shadow:var(--bolder-titr-text-shadow);
+    box-shadow: var(--bolder-titr-box-shadow);
+    background: var(--bolder-titr-background);
+    width: 25%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius:var(--bolder-titr-border-radius);
+    text-align: center;
+}
+
+
+.special-post__slider-container{
+    width: 80% !important;
+    margin: auto;
+}
+
+
+.special-post__card-container{
+    width: 80% !important;
+
+}
+

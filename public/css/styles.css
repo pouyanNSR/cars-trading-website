@@ -1,0 +1,100 @@
+
+
+@font-face {
+  font-family: "shabnam";
+  src: url("../fonts/Shabnam-Medium-FD.woff");
+}
+
+@font-face {
+  font-family: "vazir";
+  src: url("../fonts/Vazir.eot");
+  src: url("../fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Vazir.woff2") format("woff2"),
+    url("../fonts/Vazir.woff") format("woff"),
+    url("../fonts/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "tanha";
+  src: url("../fonts/Tanha.eot");
+  src: url("../fonts/Tanha.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Tanha.woff2") format("woff2"),
+    url("../fonts/Tahna.woff") format("woff"),
+    url("../fonts/Tanha.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/Roboto-Regular.eot");
+  src: url("../fonts/Roboto-Regular.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff"),
+    url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root{
+  --input-background:rgb(231, 233, 234);
+
+  --text-light-color:aliceblue;
+  --text-dark-color:rgb(61, 61, 61);
+  --text-mid-dark-color:rgb(71, 68, 68);
+  
+  --input-box-shadow: 5px 5px 20px #bab7b7 inset;
+  --input-focus-outline-style:3px 3px 20px rgba(137, 43, 226, 0.593) inset;
+
+  --primary-background-linear:linear-gradient(217deg, rgba(226, 64, 255, 0.9), transparent 80.71%),
+  linear-gradient(127deg, rgba(55, 220, 160, 0.9), transparent 80.71%),
+  linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 80.71%) !important;
+
+  --bolder-titr-text-shadow: 0 10px 6px rgb(11, 66, 124),0 4px 6px rgb(95, 13, 117);
+  --bolder-titr-fint-size:62px;
+  --bolder-titr-box-shadow: 0 0 30px 8px rgb(252, 255, 208);
+  --bolder-titr-text-color:rgb(210, 220, 255);
+  --bolder-titr-background: radial-gradient(transparent 0%,#f2ff03dd 90%);
+  --bolder-titr-border-radius:3px 3px 50px  50px;
+  
+  --margin-top-from-section:40px;
+  
+  --card-box-shadow:0 7px 6px rgb(4, 22, 21),
+  -23px 0 20px -17px rgb(1, 82, 77),
+  23px 0 20px -17px rgb(1, 82, 77),
+  inset 0 0 8px rgba(0, 0, 0, 0.7);
+  --card-background-color:rgba(234, 251, 255, 0.827);
+  --card-font-weight:700;
+  --card-font-size: 16px;
+  --card-title-font-weight:bold;
+  --card-title-font-size: 27px;
+  --card-content-inset-box-shadow: 0 -4px 10px inset rgb(198, 31, 117) 
+
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* font-family:"shabnam"; */
+  font-family: "tanha";
+  font-feature-settings: "ss02";
+}
+/* div{
+  font-family: vazir;
+} */
+
+.MuiCard-root::-webkit-scrollbar {
+  display: none;
+}
+/* *{
+  font-family: "vazir";
+  font-feature-settings: "ss02";
+} */

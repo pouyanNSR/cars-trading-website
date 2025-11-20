@@ -1,0 +1,308 @@
+.search-box {
+  display: flex;
+  /* background-color: rgb(9, 255, 0); */
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fade-in 2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation-delay: 1.3s;
+}
+@keyframes fade-in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.search-box__row {
+  min-width: 80% !important;
+  display: flex;
+  min-height: 40px;
+  border: 2px solid rgb(16, 15, 16);
+  /* outline: 4px solid rgba(119, 76, 9,1); */
+  /* box-shadow: 0px 0px 9px 5px rgba(35, 31, 42, 0.649); */
+  transition: 0.3s linear;
+}
+.search-box__row:hover{
+  /* outline: 3.5px solid rgb(34, 217, 122); */
+  /* outline-offset: 16px; */
+  /* box-shadow: none;
+  border-radius: 5px; */
+}
+
+
+/** Commons */
+
+.search-box__col {
+  position: relative;
+  display: inline-block;
+}
+.search-box__input{
+  width: 100%;
+  height: 100%;
+  background-color:var(--input-background);
+  /* padding-left: 35px; */
+  border: 2px solid #ccc;
+  height: 100%;
+  box-shadow:var(--input-box-shadow);
+  padding-right: 13px;
+}
+
+.search-box__input::placeholder{
+  padding-left: 35px;
+  padding-right:27px;
+}
+.search-box__input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s;
+}
+
+.search-box__input:not(:placeholder-shown) + .search-box__input-icon,
+.search-box__input:focus:not(:placeholder-shown) + .search-box__input-icon{
+  opacity: 0;
+}
+
+  /*$ searchSection and priceSection for OutlineStyle */
+.search-box__price-section--outline-focus-style {
+  position: relative;
+}
+.search-box__price-input--outline-focus-style {
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+
+}
+
+.search-box__price-input--outline-focus-style:focus {
+  outline: none;
+  box-shadow:var(--input-focus-outline-style);
+}
+
+.search-box__price-input--outline-focus-style::placeholder {
+  color: rgba(47, 40, 40, 0.6);
+}
+
+.search-box__price-section--outline-focus-style .span {
+  position: absolute;  
+  background: var(--primary-background-linear);
+  transition: transform 1s ease;
+}
+
+.search-box__price-section--outline-focus-style .bottom,
+.search-box__price-section--outline-focus-style .top {
+  height: 2px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+.search-box__price-section--outline-focus-style .left,
+.search-box__price-section--outline-focus-style .right {
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+}
+
+.search-box__price-section--outline-focus-style .bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+.search-box__price-section--outline-focus-style .search-box__price-input--outline-focus-style:focus ~ .bottom {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+.search-box__price-section--outline-focus-style .right {
+  right: 0;
+  transform-origin: top right;
+}
+.search-box__price-section--outline-focus-style .search-box__price-input--outline-focus-style:focus ~ .right {
+  transform-origin: bottom right;
+  transform: scaleY(1);
+}
+
+.search-box__price-section--outline-focus-style .top {
+  top: 0;
+  transform-origin: top left;
+}
+
+.search-box__price-section--outline-focus-style .search-box__price-input--outline-focus-style:focus ~ .top {
+  transform-origin: top right;
+  transform: scaleX(1);
+}
+
+.search-box__price-section--outline-focus-style .left {
+  left: 0;
+  transform-origin: bottom left;
+}
+
+.search-box__price-section--outline-focus-style .search-box__price-input--outline-focus-style:focus ~ .left {
+  transform-origin: top left;
+  transform: scaleY(1);
+}
+
+/*> iMPORTANT FOR DIAPEAR ICON WHEN FOCUS INPUT */
+.search-box__price-section--outline-focus-style .search-box__price-input--outline-focus-style:focus ~ .search-box__input-icon{
+  opacity: 0;
+}
+.downward-arrow-svg{
+  position: absolute;
+  top: 42%;
+  left: 5%;
+}
+  /*$ searchSection and priceSection for OutlineStyle End! */
+/** Commons End! */
+
+/** search-box__location-section */
+.search-box__location-section {
+  padding: 0;
+}
+.search-box__location-section-inner {
+  position: relative;
+  padding: 0;
+  height: 100%;
+}
+#search-box__location__select-tag {
+  border-radius: 0%;
+  background-image: none;
+  color: var(--text-dark-color);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#search-box__location__select-tag  #location__input-text{
+  padding-right:38px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.location__modal--close-button:hover{
+  background-color: rgb(38, 122, 122) !important;
+  color: aliceblue;
+}
+
+
+/** search-box__location-section End! */
+
+/** search-box__model-section */
+.search-box__model-section {
+}
+.search-box__model-section-inner{
+  position: "relative";
+  display:"inline-block";
+  width:100%;
+  height:100%;
+}
+
+.model__select-tag{
+  width:100%;
+  height:100%;
+  background-color:var(--input-background);
+  border: 1px solid #ccc;
+  box-shadow:var(--input-box-shadow);
+  color:var(--text-dark-color);
+  padding-right: 35px;
+  appearance: none;
+  padding-left: 0;
+}
+.model__select-tag option:not(:nth-child(1)){
+  right: 4px;
+  background-color: rgb(228, 198, 255);
+  color: var(--text-dark-color);
+}
+/* .search-box__model-section .modelSelectTagContainer .model__select-tag:hover{
+  border: 2px solid blueviolet !important;
+} */
+
+
+/** search-box__model-section End! */
+
+
+/** priceSection */
+#search-box__price-input{
+  font-family: "shabnam";
+}
+#search-box__price-input::placeholder{
+  padding-right: 16px;
+  font-family: "vazir";
+}
+
+/** priceSection End! */
+
+
+/** search-box__search-car-section */
+.search-box__search-car-section {
+  display: flex;
+  gap: 0;
+}
+
+.search-box__search-car-section input {
+  border: none;
+  width: 70%;
+  background-color: var(--input-background);
+  height: 100%;
+}
+.search-box__search-car-section input::placeholder {
+  text-align: center;
+}
+.search-box__search-car-section .Button {
+  width: 30%;
+  background-color: rgb(233, 19, 48);
+
+  box-shadow: 3px 3px 14px rgb(163, 13, 13) inset;
+  text-shadow: 0 5px 5px rgb(121, 20, 20);
+  font-size: 16px;
+  border-right:2px solid rgb(63, 58, 58);
+	animation: swing-in-top-fwd 0.9s 3.2s both;
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    transform: rotateX(-100deg);
+    transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: top;
+    opacity: 1;
+  }
+}
+#search-box__search-seaction-input{
+}
+/** search-box__search-car-section End! */
+/* .priceSection .priceInput:not(:placeholder-shown) + .search-box__input-icon,
+.priceSection
+  .priceInput:focus:not(:placeholder-shown)
+  + .search-box__input-icon
+  .search-box__model-section
+  .priceInput:not(:placeholder-shown)
+  + .search-box__input-icon,
+.search-box__model-section
+  .priceInput:focus:not(:placeholder-shown)
+  + .search-box__input-icon
+  .search-box__location-section
+  .locationInput:not(:placeholder-shown)
+  + .search-box__input-icon,
+.search-box__location-section .locationInput:focus:not(:placeholder-shown) + .search-box__input-icon {
+  opacity: 0;
+} */
+@media (max-width: 500px) {
+  .gridContainer {
+    min-width: 100% !important;
+    min-height: 80px;
+    gap: 9px;
+  }
+  .search-box__row{
+    border: none;
+  }
+
+}

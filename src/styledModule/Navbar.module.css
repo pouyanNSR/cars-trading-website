@@ -1,0 +1,13 @@
+.navStyle {
+  background: linear-gradient(217deg, rgba(226, 64, 255, 0.9), transparent 80.71%),
+    linear-gradient(127deg, rgba(55, 220, 160, 0.9), transparent 80.71%),
+    linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 80.71%) !important;
+  width: 100vw;
+  height: 12vh;
+  position: fixed;
+  z-index: 1000;
+}
+.navbar__container{
+  height: inherit !important;
+  
+}
