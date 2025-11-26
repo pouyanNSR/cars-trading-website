@@ -1,48 +1,55 @@
 
 
-import { Badge, DiamondRounded, HistoryRounded, MyLocationRounded,
-     Opacity, SellRounded, StraightenRounded, TollRounded, VisibilityRounded } from '@mui/icons-material';
+import {
+    Badge, DiamondRounded, HistoryRounded, MyLocationRounded,
+    Opacity, SellRounded, StraightenRounded, TollRounded, VisibilityRounded
+} from '@mui/icons-material';
 
 import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  Box,
-  IconButton,
+    Grid,
+    Card,
+    CardMedia,
+    CardContent,
+    Typography,
+    Box,
+    IconButton,
 } from "@mui/material";
 import car from "../../assets/26747685067_370dfcdf35_h-min.jpg"
 
 import styles from "./innerComponentsStyles/CardSample.module.css"
 
-const CardSample = ({item}) => {
+const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
     return (
         <Card
+            id={componentClass === "last-post" && styles["card__card--last-post"]}
             className={styles["card__card"]}
             sx={{
+                direction:"rtl",
                 borderRadius: 3,
                 boxShadow: 3,
                 // overflow: "hidden",
                 backgroundColor: "yellow",
                 mt: 2,
                 minHeight: "100%",
-                textAlign: "center"
+                textAlign: "center",
+                maxWidth: isMaxWidth ? "80%" : null
             }}
         >
             <Box sx={{ position: "relative" }}>
-                <Grid
-                    badgeContent="New"
-                    color="primary"
-                    className={styles["card__img-container--badge-container"]}
-                >
-                    <DiamondRounded />
-                    <Box>
-                        <Typography>
-                            ویژه
-                        </Typography>
-                    </Box>
-                </Grid>
+                {isIcon && 
+                    <Grid
+                        badgeContent="New"
+                        color="primary"
+                        className={styles["card__img-container--badge-container"]}
+                    >
+                        <DiamondRounded/>
+                        <Box>
+                            <Typography>
+                                ویژه
+                            </Typography>
+                        </Box>
+                    </Grid>
+                }
                 <CardMedia
                     className={styles["card__card-media"]}
                     component="img"
@@ -52,12 +59,17 @@ const CardSample = ({item}) => {
                     sx={{ objectFit: "contain", height: "100%" }}
                 />
             </Box>
-            <CardContent sx={{ bgcolor: "aliceblue", height: "100%" }} className={styles["card__card-content"]}>
-                <Typography variant="subtitle1" className={styles["card__card-content--lable-title"]}>
+            <CardContent 
+                sx={{ minHeight: "100%" }}
+                className={styles["card__card-content"]} 
+                id={componentClass === "last-post" && styles["card__card-content--last-post"]}
+            >
+                <Typography variant="subtitle1" className={styles["card__card-content--lable-title"]}
+                >
                     {item.title}
                 </Typography>
                 <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
-                    <Typography variant="subtitle1" sx={{ fontFamily: "shabnam" }}>
+                    <Typography  variant="subtitle1" sx={{ fontFamily: "shabnam" }}>
                         {item.location}
                     </Typography>
                     <Typography variant="subtitle1" sx={{ mr: 0.4 }} className={styles["card__card-content--lable"]}>
@@ -126,21 +138,6 @@ const CardSample = ({item}) => {
                         <TollRounded fontSize='small' />
                     </Typography>
                 </Grid>
-                    {/* <Typography variant="body2" color="text.secondary" sx={{fontFamily:"shabnam"}}>
-                        {item.producingYear}
-                    </Typography>
-                    <Typography variant="subtitle1" fontWeight="bold" sx={{fontFamily:"shabnam"}}>
-                        {item.ditance}
-                    </Typography>
-                    <Typography variant="subtitle2" color="text.secondary" sx={{fontFamily:"shabnam"}}>
-                        {item.location}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{fontFamily:"shabnam"}}>
-                        {item.time}
-                    </Typography>
-                    <Typography variant="subtitle1" fontWeight="bold" sx={{fontFamily:"shabnam"}}>
-                        {item.view}
-                    </Typography> */}
             </CardContent>
         </Card>
     )

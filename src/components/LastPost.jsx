@@ -13,6 +13,7 @@ import {
     Box,
     IconButton,
 } from "@mui/material";
+import CardSample from './innerComponents/CardSample';
 import styles from "../styledModule/LastPost.module.css"
 
 const LastPost = () => {
@@ -23,15 +24,24 @@ const LastPost = () => {
         { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
         { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
         { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" }
-      ];    
+        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
+        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
+    ];
     return (
         <>
-            <Box className={styles["LastPost__container"]} sx={{ height: "70vh" }}>
-                <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                    {data.map((Item, index) => (
-                        <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-                            dd
+            <Box className={styles["lastPost__container"]}>
+                <Typography
+                    variant="h3"
+                    sx={{ fontWeight: "bold" }}
+                    dir="rtl"
+                    id={styles["last-post__titr"]}
+                >
+                    آخرین آگهی ها
+                </Typography>
+                <Grid container className={styles["last-post__inner-container"]} rowSpacing={13} sx={{ display: "flex", justifyContent: "center" }}>
+                    {data.map((item, index) => (
+                        <Grid item sx={{ display:"flex",height: "100%",justifyContent:"center"}} xs={6} sm={6} md={3} key={index}>
+                            <CardSample item={item} isIcon={false} isMaxWidth={true} componentClass={"last-post"}/>
                         </Grid>
                     ))}
                 </Grid>

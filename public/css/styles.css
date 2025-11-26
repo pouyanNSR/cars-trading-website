@@ -46,7 +46,10 @@
   --text-light-color:aliceblue;
   --text-dark-color:rgb(61, 61, 61);
   --text-mid-dark-color:rgb(71, 68, 68);
-  
+
+  --last-post-background:#d6fff6;
+  /* --last-post-background:#fedbff; */
+
   --input-box-shadow: 5px 5px 20px #bab7b7 inset;
   --input-focus-outline-style:3px 3px 20px rgba(137, 43, 226, 0.593) inset;
 

@@ -98,6 +98,6 @@
   z-index:0;
 }
 .path{
-  fill: rgb(235, 215, 255) !important;
+  fill: var(--last-post-background) !important;
   z-index:0;
 }

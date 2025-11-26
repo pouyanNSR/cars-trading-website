@@ -1,6 +1,11 @@
 .card__card{
     /* box-shadow: 0 0 11px rgb(62, 61, 61),0 0 11px 13px inset rgb(24, 83, 160) !important; */
     box-shadow: var(--card-box-shadow) !important;
+    
+}
+
+#card__card--last-post{
+    width: 70% !important;
 }
 
 .card__img-container--badge-container{
@@ -22,8 +27,13 @@
 }
 
 .card__card-content{
-    background-color:var(--card-background-color) !important;
-    box-shadow: var(--card-content-inset-box-shadow)
+    background-color:var(--card-background-color) !important ;
+    /* box-shadow: var(--card-content-inset-box-shadow) */
+}
+
+#card__card-content--last-post{
+    background-color: rgb(251, 252, 245) !important;
+    /* box-shadow: none !important; */
 }
 
 .card__card-content--lable{

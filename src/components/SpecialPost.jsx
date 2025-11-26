@@ -74,8 +74,8 @@ const SpecialPost = () => {
   const settings = {
     dots: true,
     infinite: true,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     cssEase: "ease",
     speed: 1200,
     slidesToShow: 3,
@@ -117,7 +117,7 @@ const SpecialPost = () => {
         <Slider {...settings} sx={{ zIndex: 8 }} className="sssss">
           {data.map((item, index) => (
             <Box key={index} sx={{ px: 1, mb: 3 }} className={styles["special-post__card-container"]}>
-              <CardSample item={item}/>
+              <CardSample item={item} isIcon={true}/>
             </Box>
           ))}
         </Slider>

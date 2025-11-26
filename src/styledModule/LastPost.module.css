@@ -1,7 +1,76 @@
-.LastPost__container{
-
-  background-color: #fedbff;
-  /* background-color: #c419ca; */
+/* .lastPost__container {
+  height: max-content;
+  padding-top: 4%;
+  background-color: var(--last-post-background);
   z-index: 12;
   position: relative;
+  border-radius: 150px;
+  background: #caffff;
+  box-shadow: 31px -31px 41px #aad6d6, -31px 31px 41px #eaffff;
+  background-repeat: repeat !important;
+  background-size: 130px !important;
+} */
+
+/*#background-color: #c419ca; */
+/* 
+.lastPost__container {
+  height: max-content;
+  padding-top: 4%;
+  z-index: 12;
+  position: relative;
+  background-image: radial-gradient(rgb(188, 255, 251),rgb(94, 255, 212),rgb(46, 71, 64));
+  background-size: 50px;
+  background-repeat:repeat-x;
+
+  box-shadow: 31px -31px 41px #aad6d6, -31px 31px 41px #eaffff;
+
+} */
+
+.lastPost__container {
+  height: max-content;
+  padding-top: 7%;
+  z-index: 12;
+  position: relative;
+
+  background-image: radial-gradient(circle farthest-corner at center center, #aad9f8 60%,#caffff 85%);
+  background-size:120px;
+  background-repeat: repeat;
+  padding-bottom: 8%;
+}
+
+.last-post__inner-container{
+}
+
+.last-post__inner-container::after{
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  content: " آگهی های شما";
+  font-size: 130px;
+  color: rgb(249, 248, 248);
+  text-shadow: 0 0 12px rgb(255, 253, 240);
+  border: 4px solid rgba(248, 244, 244);
+  box-shadow: 0 0 22px 10px inset rgb(216, 216, 217);
+  width: 80%;
+  height: 40%;
+  margin-top: 21.5%;
+  background: linear-gradient(rgba(94, 6, 111, 0.997),rgba(23, 252, 206, 0.953))/*, url(../assets/cosmic-light-trails-3840x2160-20467.jpg) center/cover*/ ;
+}
+
+#last-post__titr {
+  outline: 5px solid rgb(95, 47, 107);
+  outline-offset: 4px;
+  border: 4px solid rgb(36, 17, 23);
+  color: var(--bolder-titr-text-color) !important;
+  text-shadow: var(--bolder-titr-text-shadow);
+  box-shadow: var(--bolder-titr-box-shadow), 0 0 1px 17px rgb(164, 165, 203);
+  --bolder-titr-background: radial-gradient(transparent 0%, #7b1eaac0 90%);
+  background: var(--bolder-titr-background),url(../assets/chicago-downtown-3840x2160-21348.jpg) 1572px 1400px/cover;
+  width: 35%;
+  margin: auto;
+  margin-bottom: 3%;
+  border-radius: var(--bolder-titr-border-radius);
+  text-align: center;
 }
