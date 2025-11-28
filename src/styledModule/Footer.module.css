@@ -1,0 +1,122 @@
+/* Root footer background with fantasy gradient and glowing orbs */
+.footer-root {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(135deg, #0f172a 0%, #2b1b3a 45%, #3b2a6a 100%);
+  /* background: linear-gradient(310deg,#2b1b3ab1 0%, #2b1b3aeb 35%, #0f172a 100%); */
+  padding: 48px 0;
+
+}
+
+
+/* shadow-like shaping */
+.footer-root::before,
+.footer-root::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.35;
+  transform: translateZ(0);
+}
+
+.footer-root::before {
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 120, 200, 0.18),
+    transparent 40%
+  );
+  top: -60px;
+  right: -40px;
+}
+
+.footer-root::after {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(80, 200, 255, 0.12),
+    transparent 35%
+  );
+  bottom: -120px;
+  left: -80px;
+}
+
+/* Glass card look */
+.footer-glass {
+  backdrop-filter: blur(6px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+/* Section titles */
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.6px;
+}
+
+/* Text blocks */
+.footer-text {
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* Links */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 6px;
+}
+
+.footer-links a {
+  color: inherit;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Icons */
+.footer-icon {
+  color: white !important;
+  background: linear-gradient(45deg, #ff7ab6, #7ad1ff);
+  margin-right: 8px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.footer-icon:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* Social group */
+.footer-social {
+  display: flex;
+  gap: 8px;
+}
+
+/* Divider */
+.footer-divider {
+  background: rgb(129, 128, 128);
+  height: 1px;
+  margin: 24px 0;
+  opacity: 0.9;
+}
+
+/* Captions */
+.footer-caption {
+  opacity: 0.85;
+}

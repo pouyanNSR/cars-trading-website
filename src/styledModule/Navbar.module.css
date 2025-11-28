@@ -18,3 +18,7 @@
   height: inherit !important;
   
 }
+ul li:hover {
+  text-decoration: underline;
+  text-decoration-color: aliceblue;
+}

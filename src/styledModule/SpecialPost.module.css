@@ -12,14 +12,14 @@
 }
 
 #special-post__titr{
-    color: var(--bolder-titr-text-color) !important;
-    text-shadow:var(--bolder-titr-text-shadow);
-    box-shadow: var(--bolder-titr-box-shadow);
-    background: var(--bolder-titr-background);
+    color: var(--titr-text-color) !important;
+    text-shadow:var(--titr-text-shadow);
+    box-shadow: var(--titr-box-shadow);
+    background: var(--titr-background);
     width: 25%;
     margin: auto;
     margin-bottom: 40px;
-    border-radius:var(--bolder-titr-border-radius);
+    border-radius:var(--titr-border-radius);
     text-align: center;
 }
 

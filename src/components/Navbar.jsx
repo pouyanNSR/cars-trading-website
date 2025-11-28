@@ -55,7 +55,7 @@ const Navbar = () => {
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                   </li> */}
                         </ul>
-                        <Button sx={{ backgroundColor: "white" }} variant='contained' endIcon={<ControlPointRounded />}>
+                        <Button sx={{ backgroundColor: "white",marginRight:"14px" }} padding="auto 3px" variant='contained' endIcon={<ControlPointRounded />}>
                             <Typography variant='caption' color="black">
                                 ثبت آگهی
                             </Typography>

@@ -57,12 +57,12 @@
   linear-gradient(127deg, rgba(55, 220, 160, 0.9), transparent 80.71%),
   linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 80.71%) !important;
 
-  --bolder-titr-text-shadow: 0 10px 6px rgb(11, 66, 124),0 4px 6px rgb(95, 13, 117);
-  --bolder-titr-fint-size:62px;
-  --bolder-titr-box-shadow: 0 0 30px 8px rgb(252, 255, 208);
-  --bolder-titr-text-color:rgb(210, 220, 255);
-  --bolder-titr-background: radial-gradient(transparent 0%,#f2ff03dd 90%);
-  --bolder-titr-border-radius:3px 3px 50px  50px;
+  --titr-text-shadow: 0 10px 6px rgb(11, 66, 124),0 4px 6px rgb(95, 13, 117);
+  --titr-fint-size:62px;
+  --titr-box-shadow: 0 0 30px 8px rgb(252, 255, 208);
+  --titr-text-color:rgb(210, 220, 255);
+  --titr-background: radial-gradient(transparent 0%,#f2ff03dd 90%);
+  --titr-border-radius:3px 3px 50px 50px;
   
   --margin-top-from-section:40px;
   

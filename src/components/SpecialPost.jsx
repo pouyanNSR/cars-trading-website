@@ -75,7 +75,7 @@ const SpecialPost = () => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     cssEase: "ease",
     speed: 1200,
     slidesToShow: 3,

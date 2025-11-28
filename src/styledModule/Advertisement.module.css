@@ -64,7 +64,7 @@
   margin-top: 40px !important;
   color: #f0bfff51 !important;
   color: rgb(226, 255, 39) !important;
-  font-size:var(--bolder-titr-fint-size) !important;
+  font-size:var(--titr-fint-size) !important;
   text-shadow: 0 8px 1px rgb(42, 40, 10);
   padding: 0;
 }

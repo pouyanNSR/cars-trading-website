@@ -21,6 +21,8 @@ import SaveIcon from "@mui/icons-material/Save";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
 import LastPost from "./components/LastPost";
+import Companies from "./components/Companies";
+import Footer from "./components/Footer";
 
 export const theme = createTheme({
   direction: "rtl",
@@ -155,6 +157,8 @@ function App() {
           <SpecialPost />
           <Advertisement />
           <LastPost/>
+          <Companies/>
+          <Footer/>
         </HelmetProvider>
       </ThemeProvider>
     </CacheProvider>

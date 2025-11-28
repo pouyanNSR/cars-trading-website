@@ -1,0 +1,32 @@
+.companies__container{
+    height: 100vh;
+    background:linear-gradient(to bottom,rgba(130, 18, 235, 0.323) 60%,rgba(254, 251, 251, 0.992) 100%), url(../assets/mercedes-benz-vision-avtr-electric-cars-concept-cars-2020-5k-3840x2160-1886.jpeg) center/cover ;
+    background-position: 0% 40%;
+    box-shadow: 0 8px 20px 0px inset rgb(239, 237, 237), 0 -18px 20px 20px rgb(239, 237, 237);
+    border-top: 6px solid rgb(77, 77, 77);
+}
+.companies__titr{
+    text-align: center;
+    margin-top: var(--margin-top-from-section) !important;
+    color: var(--text-light-color) !important;
+    font-size:var(--titr-fint-size) !important;
+    text-shadow: 0 0 22px rgb(246, 209, 255);
+    padding: 0;
+}
+
+.companies__inner-container{
+    /* background-color: red; */
+    margin: auto;
+    width:87%;
+    margin-top: 4%;
+}
+
+.companies__inner-container--brands-container{
+    /* background-color: red; */
+
+
+}
+.companies__inner-container--brand{
+    /* background-color: blue; */
+    height: 180px;
+}
