@@ -2,9 +2,7 @@
 import { useState } from 'react'
 
 import { ManageSearchRounded, TollRounded, MyLocationRounded, DirectionsCarFilledRounded } from '@mui/icons-material';
-import {red,orange} from "@mui/material/colors"
-// import SvgArrow from "../assets/down-arrow-svgrepo-com (1).svg"
-import styles from "../styledModule/SearchBox.module.css"
+
 import {
     Modal,
     Grid,
@@ -16,7 +14,10 @@ import {
     ListItemText,
 } from "@mui/material";
 
+import styles from "../styledModule/SearchBox.module.css"
+
 const SearchBox = () => {
+
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState("");
 
@@ -43,13 +44,11 @@ const SearchBox = () => {
     return (
         <Grid className={` container ${styles["search-box"]} `}>
             <Grid className={`row justify-content-center gy-2 gy-sm-0 ${styles["search-box__row"]}`}>
-                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-3 p-0 ${styles["search-box__col"]} ${styles["search-box__location-section"]}`} style={{ backgroundColor: "yellow" }}>
+                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-3 p-0 ${styles["search-box__col"]} ${styles["search-box__location-section"]}`}>
                     <Box className={` ${styles["search-box__location-section-inner"]}`}>
-                        {/* شبیه به سلکت */}
                         <Box
-                            id={styles["search-box__location__select-tag"]}
+                            id={styles["search-box__location__select-box"]}
                             className={`form-select p-0 ${styles["search-box__input"]}`}
-                            style={{ cursor: "pointer" }}
                             onClick={() => setOpen(true)}
                         >
                             <Box id={styles["location__input-text"]}>{selected || "انتخاب استان..."}</Box>
@@ -85,12 +84,10 @@ const SearchBox = () => {
                                 <List sx={{
                                     maxHeight:"500px",
                                     overflow:"scroll",
-                                    background: `linear-gradient(217deg, rgba(226, 64, 255, 0.9), transparent 80.71%),
-                                    linear-gradient(127deg, rgb(0 0 255 / 0.8), transparent 80.71%),
-                                    linear-gradient(336deg, rgba(55, 220, 160, 0.9), transparent 80.71%)`,
+                                    background:"var(--modal-background-color)",
                                     color:"rgb(247, 228, 244)",
                                     overflowX:"hidden",
-                                    boxShadow:"0 0 13px whitesmoke",
+                                    boxShadow:"0 0 15px var(--light-background)",
                                     borderRadius:'3px'
                                 }}>
                                     {options.map((opt,index) => (
@@ -110,70 +107,25 @@ const SearchBox = () => {
 
                                 <Box sx={{ textAlign: "right", mt: 2 }}>
                                     <Button variant="outlined" onClick={() => setOpen(false)}
-                                        className={`d-flex justify-content-start ${styles["location__modal--close-button"]}`}
+                                        className={styles["location__modal--close-button"]}
                                     >
                                         خروج
                                     </Button>
                                 </Box>
                             </Box>
                         </Modal>
-                        {/* <div
-                            className="modal fade"
-                            id="selectModal"
-                            tabIndex="-1"
-                            aria-labelledby="selectModalLabel"
-                            aria-hidden="true"
-                        >
-                            <div className="modal-dialog modal-dialog-centered">
-                                <div className="modal-content">
-                                    <div className="modal-header">
-                                        <h5 className="modal-title" id="selectModalLabel">
-                                            Select an Option
-                                        </h5>
-                                        <button
-                                            type="button"
-                                            className="btn-close"
-                                            data-bs-dismiss="modal"
-                                            aria-label="Close"
-                                        ></button>
-                                    </div>
-                                    <div className="modal-body">
-                                        <div className="list-group">
-                                            {options.map((opt) => (
-                                                <button
-                                                    key={opt}
-                                                    type="button"
-                                                    className={`list-group-item list-group-item-action ${opt === selected ? "active" : ""
-                                                        }`}
-                                                    onClick={() => handleSelect(opt)}
-                                                >
-                                                    {opt}
-                                                </button>
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <div className="modal-footer">
-                                        <button
-                                            type="button"
-                                            className="btn btn-secondary"
-                                            data-bs-dismiss="modal"
-                                        >
-                                            Close
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
                     </Box>
                 </Grid>
-                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__model-section"]}`} style={{ backgroundColor: "green" }}>
+                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__model-section"]}`}>
                     <Box className={styles["search-box__model-section-inner"]}>
-                        <DirectionsCarFilledRounded style={{ position: "absolute", top: "50%", right: "8px", transform: "translateY(-50%)" }}
-                            className={styles["search-box__input-icon"]} sx={{ color: "blue" }} />
-                        <select className={styles["model__select-tag"]}>
+                        <DirectionsCarFilledRounded sx={{ position: "absolute",color: "blue" , top: "50%", right: "8px", transform: "translateY(-50%)" }}
+                            className={styles["search-box__input-icon"]} 
+                        />
+                        <select className={styles["search-box__model__select-box"]}>
                             <option>انتخاب مدل</option>
                             <option>کوپه</option>
-                            <option>Logout</option>
+                            <option>سدان</option>
+                            <option>هاچبک</option>
                         </select>
                         <svg className={styles["downward-arrow-svg"]} xmlns="http://www.w3.org/2000/svg" fill="#373636" height="8px" width="8px" viewBox="0 0 512.002 512.002">
                             <path d="M498.837,65.628c-7.957-3.328-17.152-1.472-23.253,4.629L256,289.841L36.416,70.257
@@ -183,21 +135,21 @@ const SearchBox = () => {
                         </svg>
                     </Box>
                 </Grid>
-                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__price-section"]} ${styles["search-box__price-section--outline-focus-style"]}`} style={{}}>
+                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__price-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
                     <input id={styles["search-box__price-input"]} className={`${styles["search-box__input"]} ${styles["search-box__price-input--outline-focus-style"]}`} type="text" placeholder="قیمت به ریال"
                         autoComplete="off" />
-                    <span className={`${styles["bottom"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["right"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["top"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["left"]} ${styles["span"]}`}></span>
+                    <span className={`${styles["bottom"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["right"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["top"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["left"]} ${styles["input__span"]}`}></span>
                     <TollRounded className={styles["search-box__input-icon"]} sx={{ color: "green" }} />
                 </Grid>
-                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-5 p-0 ${styles["search-box__col"]} ${styles["search-box__search-car-section"]} ${styles["search-box__price-section--outline-focus-style"]}`} style={{}}>
+                <Grid className={` col-12 col-sm-6 col-md-6 col-lg-5 p-0 ${styles["search-box__col"]} ${styles["search-box__search-car-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
                     <input id={styles["search-box__search-seaction-input"]} className={`${styles["search-box__price-input--outline-focus-style"]}`} placeholder={`جستجو در تمام آگهی ها ... `} type="search" autoComplete="off" />
-                    <span className={`${styles["bottom"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["right"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["top"]} ${styles["span"]}`}></span>
-                    <span className={`${styles["left"]} ${styles["span"]}`}></span>
+                    <span className={`${styles["bottom"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["right"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["top"]} ${styles["input__span"]}`}></span>
+                    <span className={`${styles["left"]} ${styles["input__span"]}`}></span>
                     <Button className={`rounded-0 ${styles.Button}`} variant="contained" endIcon={<ManageSearchRounded />}>
                         <Typography variant="p">
                             جستجو
@@ -205,29 +157,6 @@ const SearchBox = () => {
                     </Button>
                 </Grid>
             </Grid>
-            {/* 
-            <Grid spacing={2} className={styles.gridContainer}>
-                <Grid xs={12} sm={6} md={6} lg={3} className={styles["search-box__col"]} sx={{ backgroundColor: "red" }}>
-                    <Grid >
-                        t
-                    </Grid>
-                </Grid>
-                <Grid xs={12} sm={6} md={6} lg={3} className={styles["search-box__col"]} sx={{ backgroundColor: "green" }}>
-                    <Grid >
-                        t
-                    </Grid>
-                </Grid>
-                <Grid xs={12} sm={6} md={6} lg={3} className={styles["search-box__col"]}sx={{ backgroundColor: "yellow" }}>
-                    <Grid >
-                        t
-                    </Grid>
-                </Grid>
-                <Grid xs={12} sm={6} md={6} lg={3} className={styles.innerGrid}sx={{ backgroundColor: "blue" }}>
-                    <Grid >
-                        t
-                    </Grid>
-                </Grid>
-            </Grid> */}
         </Grid>
     )
 }

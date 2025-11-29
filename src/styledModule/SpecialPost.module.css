@@ -1,6 +1,4 @@
 
-/* @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); */
-
 .special-post__container{
     /* background: rgb(196, 196, 196); */
     background: #25CC0F;
@@ -9,6 +7,9 @@
     /* background: #B8E1FC;
     background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #4d4d4d 100%); */
     box-shadow: 0 -7px 43px inset whitesmoke, 0 0 20px transparent;
+    height: 90vh;
+    text-align: center;
+    padding: 40px 0;
 }
 
 #special-post__titr{
@@ -27,11 +28,9 @@
 .special-post__slider-container{
     width: 80% !important;
     margin: auto;
+    padding-left: 48px;
+    padding-right: 48px;
+    padding: 0 48;
 }
 
-
-.special-post__card-container{
-    width: 80% !important;
-
-}
 

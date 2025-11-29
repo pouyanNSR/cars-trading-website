@@ -7,7 +7,7 @@ import styles from "../styledModule/Navbar.module.css"
 const Navbar = () => {
     return (
         <>
-            <nav className={`navbar navbar-expand-lg ${styles.navStyle}`} >
+            <nav className={`navbar navbar-expand-lg ${styles["navbar"]}`} >
                 <div className={`container-fluid ${styles["navbar__container"]}`}>
                     <a className="navbar-brand h-100 p-0 d-flex align-items-center justify-content-start" style={{gap:"10px"}} href="#">
                         <div style={{width:"70px",height:"65px"}}>

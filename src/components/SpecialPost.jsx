@@ -1,24 +1,18 @@
-// import {Grid,Box,Typography} from '@mui/material'
-import { Badge, DiamondRounded, HistoryRounded, MyLocationRounded, Opacity, SellRounded, StraightenRounded, TollRounded, VisibilityRounded } from '@mui/icons-material';
 
-import Slider from "react-slick";
 import {
-  Grid,
-  Card,
-  CardMedia,
-  CardContent,
   Typography,
   Box,
   IconButton,
 } from "@mui/material";
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 
-import car from "../assets/26747685067_370dfcdf35_h-min.jpg"
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "../styledModule/SpecialPost.module.css"
+import Slider from "react-slick";
+
 import CardSample from './innerComponents/CardSample';
+
+import styles from "../styledModule/SpecialPost.module.css"
 
 
 const SpecialPost = () => {
@@ -34,7 +28,7 @@ const SpecialPost = () => {
   ];
 
   // Custom arrow components
-  const NextArrow = ({ onClick }) => (
+  const PrevArrow = ({ onClick }) => (
     <IconButton
       onClick={onClick}
       sx={{
@@ -48,11 +42,11 @@ const SpecialPost = () => {
         "&:hover": { backgroundColor: "#eee" },
       }}
     >
-      <ArrowBackIos />
+      <ArrowBackIos sx={{marginRight:"4px"}} />
     </IconButton>
   );
 
-  const PrevArrow = ({ onClick }) => (
+  const NextArrow = ({ onClick }) => (
     <IconButton
       onClick={onClick}
       sx={{
@@ -97,11 +91,6 @@ const SpecialPost = () => {
 
   return (
     <Box
-      sx={{
-        textAlign: "center",
-        py: 5,
-        height: "90vh"
-      }}
       className={styles["special-post__container"]}
     >
       <Typography
@@ -113,10 +102,10 @@ const SpecialPost = () => {
         آگهی‌های ویژه
       </Typography>
 
-      <Box sx={{ /* position: "relative",*/px: 6 }} className={styles["special-post__slider-container"]}>
-        <Slider {...settings} sx={{ zIndex: 8 }} className="sssss">
+      <Box className={styles["special-post__slider-container"]}>
+        <Slider {...settings} sx={{ zIndex: 8 }}>
           {data.map((item, index) => (
-            <Box key={index} sx={{ px: 1, mb: 3 }} className={styles["special-post__card-container"]}>
+            <Box key={index} sx={{ px: 1, mb: 3,width:"80% !important" }} className={styles["special-post__card-container"]}>
               <CardSample item={item} isIcon={true}/>
             </Box>
           ))}

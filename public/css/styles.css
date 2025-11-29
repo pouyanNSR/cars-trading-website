@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: "shabnam";
   src: url("../fonts/Shabnam-Medium-FD.woff");
@@ -40,55 +38,89 @@
   font-style: normal;
   font-display: swap;
 }
-:root{
-  --input-background:rgb(231, 233, 234);
+:root {
+  --light-background: rgb(231, 233, 234);
 
-  --text-light-color:aliceblue;
-  --text-dark-color:rgb(61, 61, 61);
-  --text-mid-dark-color:rgb(71, 68, 68);
+  --text-light-color: aliceblue;
+  --text-dark-color: rgb(61, 61, 61);
+  --text-mid-dark-color: rgb(71, 68, 68);
+  --text-placeholder-color:rgba(47, 40, 40, 0.6);
 
-  --last-post-background:#d6fff6;
+  --modal-background-color:linear-gradient(217deg, rgba(226, 64, 255, 0.9), transparent 80.71%),
+  linear-gradient(127deg, rgb(0 0 255 / 0.8), transparent 80.71%),
+  linear-gradient(336deg, rgba(55, 220, 160, 0.9), transparent 80.71%);
+
+  --last-post-background: #d6fff6;
   /* --last-post-background:#fedbff; */
 
   --input-box-shadow: 5px 5px 20px #bab7b7 inset;
-  --input-focus-outline-style:3px 3px 20px rgba(137, 43, 226, 0.593) inset;
+  --input-focus-outline-style: 3px 3px 20px rgba(137, 43, 226, 0.593) inset;
 
-  --primary-background-linear:linear-gradient(217deg, rgba(226, 64, 255, 0.9), transparent 80.71%),
-  linear-gradient(127deg, rgba(55, 220, 160, 0.9), transparent 80.71%),
-  linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 80.71%) !important;
+  --primary-background-linear: linear-gradient(
+      217deg,
+      rgba(226, 64, 255, 0.9),
+      transparent 80.71%
+    ),
+    linear-gradient(127deg, rgba(55, 220, 160, 0.9), transparent 80.71%),
+    linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 80.71%) !important;
 
-  --titr-text-shadow: 0 10px 6px rgb(11, 66, 124),0 4px 6px rgb(95, 13, 117);
-  --titr-fint-size:62px;
+  --titr-text-shadow: 0 10px 6px rgb(11, 66, 124), 0 4px 6px rgb(95, 13, 117);
+  --titr-fint-size: 62px;
   --titr-box-shadow: 0 0 30px 8px rgb(252, 255, 208);
-  --titr-text-color:rgb(210, 220, 255);
-  --titr-background: radial-gradient(transparent 0%,#f2ff03dd 90%);
-  --titr-border-radius:3px 3px 50px 50px;
-  
-  --margin-top-from-section:40px;
-  
-  --card-box-shadow:0 7px 6px rgb(4, 22, 21),
-  -23px 0 20px -17px rgb(1, 82, 77),
-  23px 0 20px -17px rgb(1, 82, 77),
-  inset 0 0 8px rgba(0, 0, 0, 0.7);
-  --card-background-color:rgba(234, 251, 255, 0.827);
-  --card-font-weight:700;
+  --titr-text-color: rgb(210, 220, 255);
+  --titr-background: radial-gradient(transparent 0%, #f2ff03dd 90%);
+  --titr-border-radius: 3px 3px 50px 50px;
+
+  --margin-top-from-section: 40px;
+
+  --card-box-shadow: 0 7px 6px rgb(4, 22, 21), -23px 0 20px -17px rgb(1, 82, 77),
+    23px 0 20px -17px rgb(1, 82, 77), inset 0 0 8px rgba(0, 0, 0, 0.7);
+  --card-background-color: rgba(234, 251, 255, 0.827);
+  --card-font-weight: 700;
   --card-font-size: 16px;
-  --card-title-font-weight:bold;
+  --card-title-font-weight: bold;
   --card-title-font-size: 27px;
-  --card-content-inset-box-shadow: 0 -4px 10px inset rgb(198, 31, 117) 
+  --card-content-inset-box-shadow: 0 -4px 10px inset rgb(198, 31, 117);
+
+  --sb-track-color: linear-gradient(rgb(191, 127, 250),rgb(104, 255, 182));
+  --sb-thumb-color: linear-gradient(rgba(234, 186, 255, 0.912));
+  --sb-size: 14px;
 
 }
-
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
   /* font-family:"shabnam"; */
   font-family: "tanha";
   font-feature-settings: "ss02";
+
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size) !important;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color) !important;
+  /* border-radius: 6px !important; */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color) !important;
+  border-radius: 6px !important;
+  /* height: 170px !important; */
+  border: 3px solid #f5e8e8 !important;
+  box-shadow: 0 0 12px 3px rgb(104, 97, 97);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color) !important;
+  }
 }
 /* div{
   font-family: vazir;
@@ -101,3 +133,4 @@ body {
   font-family: "vazir";
   font-feature-settings: "ss02";
 } */
+

@@ -1,8 +1,8 @@
 
 
 import {
-    Badge, DiamondRounded, HistoryRounded, MyLocationRounded,
-    Opacity, SellRounded, StraightenRounded, TollRounded, VisibilityRounded
+    DiamondRounded, HistoryRounded, MyLocationRounded
+    ,StraightenRounded, TollRounded, VisibilityRounded
 } from '@mui/icons-material';
 
 import {
@@ -11,37 +11,33 @@ import {
     CardMedia,
     CardContent,
     Typography,
-    Box,
-    IconButton,
+    Box
 } from "@mui/material";
-import car from "../../assets/26747685067_370dfcdf35_h-min.jpg"
+
+import car from "../../assets/genesis-x-gran-4096x2160-13735.jpeg"
 
 import styles from "./innerComponentsStyles/CardSample.module.css"
 
 const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
     return (
         <Card
-            id={componentClass === "last-post" && styles["card__card--last-post"]}
-            className={styles["card__card"]}
+            id={componentClass === "last-post" && styles["card--last-post"]}
             sx={{
                 direction:"rtl",
                 borderRadius: 3,
-                boxShadow: 3,
+                boxShadow: "var(--card-box-shadow)",
                 // overflow: "hidden",
                 backgroundColor: "yellow",
                 mt: 2,
                 minHeight: "100%",
                 textAlign: "center",
+
                 maxWidth: isMaxWidth ? "80%" : null
             }}
         >
             <Box sx={{ position: "relative" }}>
                 {isIcon && 
-                    <Grid
-                        badgeContent="New"
-                        color="primary"
-                        className={styles["card__img-container--badge-container"]}
-                    >
+                    <Grid className={styles["card__img-container--badge-container"]}>
                         <DiamondRounded/>
                         <Box>
                             <Typography>
@@ -51,16 +47,13 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                     </Grid>
                 }
                 <CardMedia
-                    className={styles["card__card-media"]}
                     component="img"
-                    // width="100 !important"
                     image={car}
                     alt={item.title}
                     sx={{ objectFit: "contain", height: "100%" }}
                 />
             </Box>
             <CardContent 
-                sx={{ minHeight: "100%" }}
                 className={styles["card__card-content"]} 
                 id={componentClass === "last-post" && styles["card__card-content--last-post"]}
             >
@@ -68,7 +61,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                 >
                     {item.title}
                 </Typography>
-                <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
+                <Grid color="text.secondary" className={styles["card__card-content--row-container"]}>
                     <Typography  variant="subtitle1" sx={{ fontFamily: "shabnam" }}>
                         {item.location}
                     </Typography>
@@ -79,7 +72,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                         <MyLocationRounded fontSize='small' />
                     </Typography>
                 </Grid>
-                <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
+                <Grid color="text.secondary" className={styles["card__card-content--row-container"]}>
                     <Typography variant="subtitle1">
                         نفر
                     </Typography>
@@ -93,7 +86,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                         <VisibilityRounded fontSize='small' />
                     </Typography>
                 </Grid>
-                <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
+                <Grid color="text.secondary" className={styles["card__card-content--row-container"]}>
                     <Typography variant="subtitle1">
                         پیش
                     </Typography>
@@ -110,7 +103,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                         <HistoryRounded fontSize='small' />
                     </Typography>
                 </Grid>
-                <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
+                <Grid color="text.secondary" className={styles["card__card-content--row-container"]}>
                     <Typography variant="subtitle1">
                         کیلومتر
                     </Typography>
@@ -124,7 +117,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                         <StraightenRounded fontSize='small' />
                     </Typography>
                 </Grid>
-                <Grid color="text.secondary" sx={{ display: "flex", justifyContent: "end", alignItems: "center", gap: "3px", mx: 3 }}>
+                <Grid color="text.secondary" className={styles["card__card-content--row-container"]}>
                     <Typography variant="subtitle1">
                         تومان
                     </Typography>

@@ -43,7 +43,7 @@
 .search-box__input{
   width: 100%;
   height: 100%;
-  background-color:var(--input-background);
+  background-color:var(--light-background);
   /* padding-left: 35px; */
   border: 2px solid #ccc;
   height: 100%;
@@ -71,6 +71,7 @@
   /*$ searchSection and priceSection for OutlineStyle */
 .search-box__price-section--outline-focus-style {
   position: relative;
+
 }
 .search-box__price-input--outline-focus-style {
   transition: background-color 0.3s ease-in-out;
@@ -84,10 +85,10 @@
 }
 
 .search-box__price-input--outline-focus-style::placeholder {
-  color: rgba(47, 40, 40, 0.6);
+  color: var(--text-placeholder-color) !important;
 }
 
-.search-box__price-section--outline-focus-style .span {
+.search-box__price-section--outline-focus-style .input__span {
   position: absolute;  
   background: var(--primary-background-linear);
   transition: transform 1s ease;
@@ -163,13 +164,14 @@
 /** search-box__location-section */
 .search-box__location-section {
   padding: 0;
+  cursor: pointer;
 }
 .search-box__location-section-inner {
   position: relative;
   padding: 0;
   height: 100%;
 }
-#search-box__location__select-tag {
+#search-box__location__select-box {
   border-radius: 0%;
   background-image: none;
   color: var(--text-dark-color);
@@ -178,15 +180,20 @@
   width: 100%;
   height: 100%;
 }
-#search-box__location__select-tag  #location__input-text{
+#search-box__location__select-box  #location__input-text{
   padding-right:38px;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
 }
+.location__modal--close-button{
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s linear !important;
+}
 .location__modal--close-button:hover{
-  background-color: rgb(38, 122, 122) !important;
+  background: var(--primary-background-linear) !important;
   color: aliceblue;
 }
 
@@ -203,22 +210,36 @@
   height:100%;
 }
 
-.model__select-tag{
+
+.search-box__model__select-box{
   width:100%;
   height:100%;
-  background-color:var(--input-background);
+  background-color:var(--light-background);
   border: 1px solid #ccc;
   box-shadow:var(--input-box-shadow);
   color:var(--text-dark-color);
   padding-right: 35px;
   appearance: none;
   padding-left: 0;
+  cursor: pointer;
 }
-.model__select-tag option:not(:nth-child(1)){
+
+.search-box__model__select-box:focus{
+  outline:none;
+}
+  
+
+.search-box__model__select-box option:not(:nth-child(1)){
   right: 4px;
-  background-color: rgb(228, 198, 255);
-  color: var(--text-dark-color);
+  background-color: rgb(62, 10, 75);
+  color: var(--text-light-color);
 }
+
+.search-box__model__select-box option:hover{
+  background-color: rgb(153, 255, 209) !important;
+  color: var(--text-dark-color) !important;
+}
+
 /* .search-box__model-section .modelSelectTagContainer .model__select-tag:hover{
   border: 2px solid blueviolet !important;
 } */
@@ -248,7 +269,7 @@
 .search-box__search-car-section input {
   border: none;
   width: 70%;
-  background-color: var(--input-background);
+  background-color: var(--light-background);
   height: 100%;
 }
 .search-box__search-car-section input::placeholder {
@@ -279,22 +300,7 @@
 #search-box__search-seaction-input{
 }
 /** search-box__search-car-section End! */
-/* .priceSection .priceInput:not(:placeholder-shown) + .search-box__input-icon,
-.priceSection
-  .priceInput:focus:not(:placeholder-shown)
-  + .search-box__input-icon
-  .search-box__model-section
-  .priceInput:not(:placeholder-shown)
-  + .search-box__input-icon,
-.search-box__model-section
-  .priceInput:focus:not(:placeholder-shown)
-  + .search-box__input-icon
-  .search-box__location-section
-  .locationInput:not(:placeholder-shown)
-  + .search-box__input-icon,
-.search-box__location-section .locationInput:focus:not(:placeholder-shown) + .search-box__input-icon {
-  opacity: 0;
-} */
+
 @media (max-width: 500px) {
   .gridContainer {
     min-width: 100% !important;

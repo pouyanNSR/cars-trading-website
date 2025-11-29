@@ -1,4 +1,4 @@
-.navStyle {
+.navbar{
   background: var(--primary-background-linear) !important;
   width: 100vw;
   height: 12vh;
@@ -6,14 +6,10 @@
   z-index: 1000;
   transition: all 0.2s linear;
 }
-.navStyle:hover{
+.navbar:hover{
   filter: contrast(140%) drop-shadow(0 0 19px black);
 }
-/* .navStyle:hover ul a{
-  color: rgb(67, 67, 67) !important;
-  text-decoration: underline;
-  font-weight: 700;
-} */
+
 .navbar__container{
   height: inherit !important;
   
@@ -21,4 +17,5 @@
 ul li:hover {
   text-decoration: underline;
   text-decoration-color: aliceblue;
+  font-weight: 700;
 }

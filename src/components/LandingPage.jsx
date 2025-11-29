@@ -1,19 +1,21 @@
 import SearchBox from "./SearchBox"
-import { Typography, Button, Box, Grid } from "@mui/material"
+import { Typography, Box } from "@mui/material"
 import city from "../assets/chicago.jpg"
-import { useState } from 'react'
 
 
 const LandingPage = () => {
 
     return (
         <>
-            <div style={{ display:"flex",justifyContent:"center",
-            alignItems:"center",width: "100%", height: "100vh",
-            position:"relative",/*background:`linear-gradient(rgba(190, 22, 200, 0.2),rgba(0, 0, 0, 0.4)) ,url(${city}) center/cover`*/}}>
-                <img src={city} alt="aks" width="100%" height="100%" style={{ objectFit: "cover",filter:"saturate(1.7)"}} />
-                <SearchBox/>
-            </div>
+            <Box component="div" sx={{
+                    display: "flex", justifyContent: "center",
+                    alignItems: "center", width: "100%", height: "100vh",
+                    position: "relative",/*background:`linear-gradient(rgba(190, 22, 200, 0.2),rgba(0, 0, 0, 0.4)) ,url(${city}) center/cover`*/
+                }}
+            >
+                <Box component="img" src={city} alt="city" width="100%" height="100%" sx={{ objectFit: "cover", filter: "saturate(1.7)" }} />
+                <SearchBox />
+            </Box>
         </>
     )
 }
