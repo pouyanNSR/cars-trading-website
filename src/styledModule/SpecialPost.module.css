@@ -9,7 +9,7 @@
     box-shadow: 0 -7px 43px inset whitesmoke, 0 0 20px transparent;
     height: 90vh;
     text-align: center;
-    padding: 40px 0;
+    padding: var(--section-padding-vertical);
 }
 
 #special-post__titr{

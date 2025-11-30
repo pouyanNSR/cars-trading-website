@@ -1,4 +1,4 @@
-import SearchBox from "./SearchBox"
+import SearchBox from "./innerComponents/SearchBox"
 import { Typography, Box } from "@mui/material"
 import city from "../assets/chicago.jpg"
 

@@ -5,7 +5,7 @@
   color: #fff;
   background: linear-gradient(135deg, #0f172a 0%, #2b1b3a 45%, #3b2a6a 100%);
   /* background: linear-gradient(310deg,#2b1b3ab1 0%, #2b1b3aeb 35%, #0f172a 100%); */
-  padding: 48px 0;
+  padding: var(--section-padding-vertical);
 
 }
 

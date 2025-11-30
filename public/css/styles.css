@@ -39,6 +39,8 @@
   font-display: swap;
 }
 :root {
+  --section-padding-vertical:40px 0;
+
   --light-background: rgb(231, 233, 234);
 
   --text-light-color: aliceblue;
@@ -122,15 +124,8 @@ body::-webkit-scrollbar-thumb {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color) !important;
   }
 }
-/* div{
-  font-family: vazir;
-} */
 
 .MuiCard-root::-webkit-scrollbar {
   display: none;
 }
-/* *{
-  font-family: "vazir";
-  font-feature-settings: "ss02";
-} */
 

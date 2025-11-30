@@ -39,19 +39,21 @@
 }
 
 .last-post__inner-container{
+  display: flex;
+  justify-content: center;
 }
 
 .last-post__inner-container::after{
+  content: " آگهی های شما";
   z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  content: " آگهی های شما";
   font-size: 130px;
-  color: rgb(249, 248, 248);
+  color: var(--text-light-color);
   text-shadow: 0 0 12px rgb(255, 253, 240);
-  border: 4px solid rgba(248, 244, 244);
+  border: 4px solid var(--light-background);
   box-shadow: 0 0 22px 10px inset rgb(216, 216, 217);
   width: 80%;
   height: 40%;
@@ -73,4 +75,5 @@
   margin-bottom: 3%;
   border-radius: var(--titr-border-radius);
   text-align: center;
+  font-weight: bold;
 }
