@@ -47,8 +47,7 @@ const SearchBox = () => {
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-3 p-0 ${styles["search-box__col"]} ${styles["search-box__location-section"]}`}>
                     <Box className={` ${styles["search-box__location-section-inner"]}`}>
                         <Box
-                            id={styles["search-box__location__select-box"]}
-                            className={`form-select p-0 ${styles["search-box__input"]}`}
+                            className={`p-0 ${styles["search-box__input"]}`}
                             onClick={() => setOpen(true)}
                         >
                             <Box id={styles["location__input-text"]}>{selected || "انتخاب استان..."}</Box>
