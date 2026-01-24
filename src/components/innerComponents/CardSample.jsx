@@ -19,6 +19,8 @@ import car from "../../assets/genesis-x-gran-4096x2160-13735.jpeg"
 import styles from "./innerComponentsStyles/CardSample.module.css"
 
 const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
+    console.log(item.title);
+    
     return (
         <Card
             id={componentClass === "last-post" && styles["card--last-post"]}
@@ -48,7 +50,7 @@ const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
                 }
                 <CardMedia
                     component="img"
-                    image={car}
+                    image={item.picture}
                     alt={item.title}
                     sx={{ objectFit: "contain", height: "100%" }}
                 />

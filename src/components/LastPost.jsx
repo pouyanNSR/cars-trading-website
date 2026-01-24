@@ -9,17 +9,9 @@ import CardSample from './innerComponents/CardSample';
 
 import styles from "../styledModule/LastPost.module.css"
 
+import { carsData } from "../data/specials";
+
 const LastPost = () => {
-    const data = [
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-        { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-    ];
     return (
         <>
             <Box className={styles["lastPost__container"]}>
@@ -30,9 +22,9 @@ const LastPost = () => {
                     آخرین آگهی ها
                 </Typography>
                 <Grid container className={styles["last-post__inner-container"]} rowSpacing={13}>
-                    {data.map((item, index) => (
+                    {carsData.map((carData, index) => (
                         <Grid item sx={{ display:"flex",height: "100%",justifyContent:"center"}} xs={6} sm={6} md={3} key={index}>
-                            <CardSample item={item} isIcon={false} isMaxWidth={true} componentClass={"last-post"}/>
+                            <CardSample item={carData} isIcon={false} isMaxWidth={true} componentClass={"last-post"}/>
                         </Grid>
                     ))}
                 </Grid>

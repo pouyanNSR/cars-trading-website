@@ -14,27 +14,15 @@ import {
     ListItemText,
 } from "@mui/material";
 
+import {locations} from "../../data/locations"
+
 import styles from "./innerComponentsStyles/SearchBox.module.css"
+import OutlineFocusInput from '../../commonCodes/OutlineFocusInput';
 
 const SearchBox = () => {
 
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState("");
-
-    const options = [
-        "آذربایجان شرقی",
-        "آذربایجان غربی",
-        "تهران",
-        "مازندران",
-        "گیلان",
-        "اردبیل",
-        "فارس",
-        "مرکزی",
-        "اصفهان",
-        "خراسان رضوی",
-        "البرز",
-        "خراسان جنوبی",
-    ];
 
     const handleSelect = (value) => {
         setSelected(value);
@@ -89,17 +77,17 @@ const SearchBox = () => {
                                     boxShadow:"0 0 15px var(--light-background)",
                                     borderRadius:'3px'
                                 }}>
-                                    {options.map((opt,index) => (
+                                    {locations.map((location,index) => (
                                         <ListItemButton
-                                            key={opt}
-                                            selected={opt === selected}
-                                            onClick={() => handleSelect(opt)}
-                                            sx={{borderBottom: index !== options.length - 1 ?
+                                            key={location}
+                                            selected={location === selected}
+                                            onClick={() => handleSelect(location)}
+                                            sx={{borderBottom: index !== locations.length - 1 ?
                                             "2px solid aliceblue" : "none",
                                             "&:hover":{background:"rgba(0,0,0,0.4)"},
                                         }}
                                         >
-                                            <ListItemText primary={opt} />
+                                            <ListItemText primary={location} />
                                         </ListItemButton>
                                     ))}
                                 </List>
@@ -135,20 +123,11 @@ const SearchBox = () => {
                     </Box>
                 </Grid>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__price-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
-                    <input id={styles["search-box__price-input"]} className={`${styles["search-box__input"]} ${styles["search-box__price-input--outline-focus-style"]}`} type="text" placeholder="قیمت به ریال"
-                        autoComplete="off" />
-                    <span className={`${styles["bottom"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["right"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["top"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["left"]} ${styles["input__span"]}`}></span>
+                    <OutlineFocusInput section="price-input" placeholder="قیمت به ریال"/>
                     <TollRounded className={styles["search-box__input-icon"]} sx={{ color: "green" }} />
                 </Grid>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-5 p-0 ${styles["search-box__col"]} ${styles["search-box__search-car-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
-                    <input id={styles["search-box__search-seaction-input"]} className={`${styles["search-box__price-input--outline-focus-style"]}`} placeholder={`جستجو در تمام آگهی ها ... `} type="search" autoComplete="off" />
-                    <span className={`${styles["bottom"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["right"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["top"]} ${styles["input__span"]}`}></span>
-                    <span className={`${styles["left"]} ${styles["input__span"]}`}></span>
+                    <OutlineFocusInput section="seaction-input" placeholder="جستجو در تمام آگهی ها ..." />
                     <Button className={`rounded-0 ${styles.Button}`} variant="contained" endIcon={<ManageSearchRounded />}>
                         <Typography variant="p">
                             جستجو

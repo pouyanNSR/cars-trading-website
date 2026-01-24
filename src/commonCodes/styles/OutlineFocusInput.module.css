@@ -1,0 +1,107 @@
+.search-box__input{
+  width: 100%;
+  height: 100%;
+  background-color:var(--light-background);
+  /* padding-left: 35px; */
+  border: 2px solid #ccc;
+  height: 100%;
+  box-shadow:var(--input-box-shadow);
+  padding-right: 13px;
+}
+
+
+.outline-focus-style {
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+
+}
+
+.outline-focus-style:focus {
+  outline: none;
+  box-shadow:var(--input-focus-outline-style);
+}
+
+.outline-focus-style::placeholder {
+  color: var(--text-placeholder-color) !important;
+}
+
+ .input__span {
+  position: absolute;  
+  background: var(--primary-background-linear);
+  transition: transform 1s ease;
+}
+
+ .bottom,
+ .top {
+  height: 2px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+}
+
+ .left,
+ .right {
+  width: 2px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+}
+
+ .bottom {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+ .outline-focus-style:focus ~ .bottom {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+ .right {
+  right: 0;
+  transform-origin: top right;
+}
+ .outline-focus-style:focus ~ .right {
+  transform-origin: bottom right;
+  transform: scaleY(1);
+}
+
+ .top {
+  top: 0;
+  transform-origin: top left;
+}
+
+ .outline-focus-style:focus ~ .top {
+  transform-origin: top right;
+  transform: scaleX(1);
+}
+
+ .left {
+  left: 0;
+  transform-origin: bottom left;
+}
+
+ .outline-focus-style:focus ~ .left {
+  transform-origin: top left;
+  transform: scaleY(1);
+}
+/*> iMPORTANT FOR DIAPEAR ICON WHEN FOCUS INPUT */
+ .outline-focus-style:focus ~ .search-box__input-icon{
+  opacity: 0;
+}
+
+/*? ----------------------------------------------------------------------------------------------- */
+#search-box__price-input{
+  font-family: "shabnam";
+}
+#search-box__price-input::placeholder{
+  padding-right: 16px;
+  font-family: "vazir";
+}
+
+
+/*! --------------------------------------------------------- */
+#search-box__search-seaction-input{
+}
+
+/*? ----------------------------------------------------------------------------------------------- */
