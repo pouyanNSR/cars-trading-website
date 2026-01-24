@@ -14,12 +14,9 @@ import {
     Box
 } from "@mui/material";
 
-import car from "../../assets/genesis-x-gran-4096x2160-13735.jpeg"
-
 import styles from "./innerComponentsStyles/CardSample.module.css"
 
 const CardSample = ({ item, isIcon = true ,isMaxWidth,componentClass }) => {
-    console.log(item.title);
     
     return (
         <Card

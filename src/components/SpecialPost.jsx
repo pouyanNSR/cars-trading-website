@@ -12,7 +12,7 @@ import Slider from "react-slick";
 
 import CardSample from './innerComponents/CardSample';
 
-import {carsData} from "../data/specials"
+import {carsData} from "../data/carsData"
 
 import styles from "../styledModule/SpecialPost.module.css"
 

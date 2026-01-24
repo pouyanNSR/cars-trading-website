@@ -9,7 +9,7 @@ import CardSample from './innerComponents/CardSample';
 
 import styles from "../styledModule/LastPost.module.css"
 
-import { carsData } from "../data/specials";
+import { carsData } from "../data/carsData";
 
 const LastPost = () => {
     return (

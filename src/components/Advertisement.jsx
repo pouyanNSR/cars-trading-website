@@ -2,14 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "../styledModule/Advertisement.module.css"
 import {
-    Modal,
     Grid,
     Box,
     Typography,
-    Button,
-    List,
-    ListItemButton,
-    ListItemText,
 } from "@mui/material";
 
 import Typed from "typed.js";
