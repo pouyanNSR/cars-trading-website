@@ -95,7 +95,7 @@ const Footer = () => {
                         </Grid>
                         <Grid item>
                             <Typography variant="caption" className={styles["footer-caption"]}>
-                                طراحی و توسعه با گروه نصیری و کامرانی نژاد
+                                طراحی و توسعه با پویان نصیری
                             </Typography>
                         </Grid>
                     </Grid>

@@ -1,10 +1,3 @@
-import { ThemeProvider } from "@mui/material/styles";
-import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
-import { HelmetProvider, Helmet } from "react-helmet-async";
-import createCache from "@emotion/cache";
-import { prefixer } from "stylis";
-import { createTheme } from "@mui/material/styles";
 import LandingPage from "./components/LandingPage";
 import Navbar from "./components/Navbar";
 import SpecialPost from "./components/SpecialPost";
@@ -14,48 +7,53 @@ import LastPost from "./components/LastPost";
 import Companies from "./components/Companies";
 import Footer from "./components/Footer";
 import ToolTip from "./components/innerComponents/ToolTip";
+import MainLayout from "./layouts/MainLayout";
+import { useEffect, useState } from "react";
+import { useMediaQuery } from "@mui/material";
 
-export const theme = createTheme({
-  direction: "rtl",
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#8be9fd",
-    },
-    secondary: {
-      main: "#bd93f9",
-    },
-  },
-  typography: {
-    fontFamily: "vazir,tanha"
-  },
-});
-
-const cacheRTL = createCache({
-  key: "muirtl",
-  stylisPlugins: [prefixer, rtlPlugin],
-});
+import MainContext from "./context";
 
 function App() {
+  const [mode, setMode] = useState();
+  
+  //*For Mode Button Effect
+  // const [screenEffect, setScreenEffect] = useState(false)
 
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  useEffect(() => {
+    setMode(prefersDarkMode ? "dark" : "light");
+  }, []);
+
+  const handleThemeChange = () => {
+    setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+
+    //*For Mode Button Effect
+    // setScreenEffect(true)
+    // setTimeout(() => {
+    //   setScreenEffect(false)
+    // },90)
+  };
   return (
-    <CacheProvider value={cacheRTL}>
-      <ThemeProvider theme={theme}>
-        <HelmetProvider>
-          <Helmet>
-            <title>KhodroBaz</title>
-          </Helmet>
-          <ToolTip/>
-          <Navbar />
-          <LandingPage />
-          <SpecialPost />
-          <Advertisement />
-          <LastPost/>
-          <Companies/>
-          <Footer/>
-        </HelmetProvider>
-      </ThemeProvider>
-    </CacheProvider>
+    <MainContext.Provider
+      value={{
+        handleThemeChange,
+        mode
+      }}
+    >
+      <MainLayout mode={mode} 
+      // screenEffect={screenEffect}
+      >
+        <ToolTip />
+        <Navbar />
+        <LandingPage />
+        <SpecialPost />
+        <Advertisement />
+        <LastPost />
+        <Companies />
+        <Footer />
+      </MainLayout>
+    </MainContext.Provider>
   );
 }
 export default App;

@@ -6,14 +6,16 @@ import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 
-import { useState } from "react";
+import MainContext from "../../context"
+import { useContext, useState } from "react";
 
 const ToolTip = () => {
     const [light,setLight] = useState(true)
+    const {handleThemeChange,mode} = useContext(MainContext)
 
-    const handleTheme = () =>{
-        setLight( e => !e)
-    }
+    // const handleTheme = () =>{
+    //     setLight( e => !e)
+    // }
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -45,16 +47,16 @@ const ToolTip = () => {
                 direction="up"
             >
                 <SpeedDialAction
-                    sx={{ backgroundColor: "green", color: "whitesmoke","&:hover":{backgroundColor:"rgba(0,0,0,0.9)"} }}
+                    sx={{ backgroundColor: "green", color: "whitesmoke","&:hover":{backgroundColor:"rgba(6, 33, 6, 0.9)"} }}
                     icon={<Phone />}
                     tooltipTitle="تماس با ما"
                 // onClick={}
                 />
                 <SpeedDialAction
-                    sx={{ backgroundColor: light ? "whitesmoke" : "black" ,"&:hover":{backgroundColor:"rgba(0,10,40,0.9)"}}}
-                    icon={light ? <WbSunnyRounded sx={{color:"orange"}} /> : <BedtimeRounded  sx={{color:"whitesmoke"}}  /> }
+                    sx={{ backgroundColor: mode === "light" ? "whitesmoke" : "black" ,"&:hover":{backgroundColor:"rgba(0,10,40,0.9)"}}}
+                    icon={mode === "light" ? <WbSunnyRounded sx={{color:"orange"}} /> : <BedtimeRounded  sx={{color:"whitesmoke"}}  /> }
                     tooltipTitle="تغییر تم"
-                    onClick={handleTheme}
+                    onClick={handleThemeChange}
                 />
                 <SpeedDialAction
                     sx={{ backgroundColor: "grey", color: "whitesmoke","&:hover":{backgroundColor:"rgba(200,10,20,0.9)"} }}

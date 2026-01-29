@@ -97,6 +97,6 @@
   z-index:0;
 }
 .path{
-  fill: var(--last-post-background) !important;
+  /* fill: var(--last-post-background); */
   z-index:0;
 }

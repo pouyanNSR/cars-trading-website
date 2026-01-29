@@ -1,7 +1,7 @@
 .search-box__input{
   width: 100%;
   height: 100%;
-  background-color:var(--light-background);
+  /* background-color:var(--light-background); */
   /* padding-left: 35px; */
   border: 2px solid #ccc;
   height: 100%;
@@ -16,13 +16,24 @@
 
 }
 
+.search-box__input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s;
+}
+
+/* to disappear icon when input focused */
+.search-box__input:not(:placeholder-shown) + .search-box__input-icon,
+.search-box__input:focus:not(:placeholder-shown) + .search-box__input-icon{
+  opacity: 0;
+}
+
+
 .outline-focus-style:focus {
   outline: none;
   box-shadow:var(--input-focus-outline-style);
-}
-
-.outline-focus-style::placeholder {
-  color: var(--text-placeholder-color) !important;
 }
 
  .input__span {
@@ -90,12 +101,18 @@
   opacity: 0;
 }
 
+.outline-focus-style::placeholder {
+  color: var(--text-placeholder-color) !important;
+}
+.light-placeholder::placeholder{
+  color: aliceblue !important;
+}
+
 /*? ----------------------------------------------------------------------------------------------- */
 #search-box__price-input{
   font-family: "shabnam";
 }
 #search-box__price-input::placeholder{
-  padding-right: 16px;
   font-family: "vazir";
 }
 

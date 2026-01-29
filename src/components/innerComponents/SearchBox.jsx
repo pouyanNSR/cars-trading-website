@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 
 import { ManageSearchRounded, TollRounded, MyLocationRounded, DirectionsCarFilledRounded } from '@mui/icons-material';
 
@@ -18,8 +18,13 @@ import {locations} from "../../data/locations"
 
 import styles from "./innerComponentsStyles/SearchBox.module.css"
 import OutlineFocusInput from '../../commonCodes/OutlineFocusInput';
+import MainContext from '../../context'
+import { useTheme } from '@emotion/react';
+import { color } from 'motion';
 
 const SearchBox = () => {
+    const theme = useTheme();
+
 
     const [open, setOpen] = useState(false);
     const [selected, setSelected] = useState("");
@@ -29,20 +34,23 @@ const SearchBox = () => {
         setOpen(false);
     };
 
+    const {mode} = useContext(MainContext)
+
     return (
-        <Grid className={` container ${styles["search-box"]} `}>
+        <Grid className={` container ${styles["search-box"]} `} sx={{backgroundColor:"var"}}>
             <Grid className={`row justify-content-center gy-2 gy-sm-0 ${styles["search-box__row"]}`}>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-3 p-0 ${styles["search-box__col"]} ${styles["search-box__location-section"]}`}>
                     <Box className={` ${styles["search-box__location-section-inner"]}`}>
                         <Box
+                            sx={{ backgroundColor: "background.main"}} 
                             className={`p-0 ${styles["search-box__input"]}`}
                             onClick={() => setOpen(true)}
                         >
-                            <Box id={styles["location__input-text"]}>{selected || "انتخاب استان..."}</Box>
-                            <Box><MyLocationRounded className={styles["search-box__input-icon"]} sx={{ color: "red" }} /></Box>
+                            <Box id={styles["location__input-text"]} sx={{color: "text.main"}}>{selected || "انتخاب استان..."}</Box>
+                            <Box><MyLocationRounded className={styles["search-box__input-icon"]} sx={{ color: mode === "light" ? "red" : "text.main"}} /></Box>
 
                         </Box>
-                        <svg className={styles["downward-arrow-svg"]} xmlns="http://www.w3.org/2000/svg" fill="#373636" height="8px" width="8px" viewBox="0 0 512.002 512.002">
+                        <svg className={styles["downward-arrow-svg"]} xmlns="http://www.w3.org/2000/svg" fill= {mode === "light" ? "rgb(80, 84, 89)" : "aliceblue" } height="8px" width="8px" viewBox="0 0 512.002 512.002">
                             <path d="M498.837,65.628c-7.957-3.328-17.152-1.472-23.253,4.629L256,289.841L36.416,70.257
                             c-6.101-6.101-15.275-7.936-23.253-4.629C5.184,68.913,0,76.721,0,85.34v106.667c0,5.675,2.24,11.093,6.251,15.083
                             l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251L505.751,207.09
@@ -105,16 +113,21 @@ const SearchBox = () => {
                 </Grid>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__model-section"]}`}>
                     <Box className={styles["search-box__model-section-inner"]}>
-                        <DirectionsCarFilledRounded sx={{ position: "absolute",color: "blue" , top: "50%", right: "8px", transform: "translateY(-50%)" }}
+                        <DirectionsCarFilledRounded sx={{ color: mode === "light" ? "rgba(75, 16, 224, 1)" : "text.main",position: "absolute", top: "50%", right: "8px", transform: "translateY(-50%)" }}
                             className={styles["search-box__input-icon"]} 
                         />
-                        <select className={styles["search-box__model__select-box"]}>
+                        <select style={{
+                            backgroundColor:mode === "light" ? "rgb(231, 233, 234)":"rgb(80, 84, 89)",
+                            color: mode === "light" ? "rgb(61, 61, 61)":"aliceblue"
+                            }}
+                            className={styles["search-box__model__select-box"]}
+                        >
                             <option>انتخاب مدل</option>
                             <option>کوپه</option>
                             <option>سدان</option>
                             <option>هاچبک</option>
                         </select>
-                        <svg className={styles["downward-arrow-svg"]} xmlns="http://www.w3.org/2000/svg" fill="#373636" height="8px" width="8px" viewBox="0 0 512.002 512.002">
+                        <svg className={styles["downward-arrow-svg"]} style={{marginLeft:"4px"}} xmlns="http://www.w3.org/2000/svg" fill= {mode === "light" ? "rgb(80, 84, 89)" : "aliceblue" } height="8px" width="8px" viewBox="0 0 512.002 512.002">
                             <path d="M498.837,65.628c-7.957-3.328-17.152-1.472-23.253,4.629L256,289.841L36.416,70.257
                             c-6.101-6.101-15.275-7.936-23.253-4.629C5.184,68.913,0,76.721,0,85.34v106.667c0,5.675,2.24,11.093,6.251,15.083
                             l234.667,234.667c4.16,4.16,9.621,6.251,15.083,6.251c5.462,0,10.923-2.091,15.083-6.251L505.751,207.09
@@ -124,7 +137,6 @@ const SearchBox = () => {
                 </Grid>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-2 p-0 ${styles["search-box__col"]} ${styles["search-box__price-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
                     <OutlineFocusInput section="price-input" placeholder="قیمت به ریال"/>
-                    <TollRounded className={styles["search-box__input-icon"]} sx={{ color: "green" }} />
                 </Grid>
                 <Grid className={` col-12 col-sm-6 col-md-6 col-lg-5 p-0 ${styles["search-box__col"]} ${styles["search-box__search-car-section"]} ${styles["search-box__price-section--outline-focus-style"]}`}>
                     <OutlineFocusInput section="seaction-input" placeholder="جستجو در تمام آگهی ها ..." />

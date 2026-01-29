@@ -1,9 +1,7 @@
 
 .special-post__container{
     /* background: rgb(196, 196, 196); */
-    background: #25CC0F;
     background: linear-gradient(to bottom right, #00ffb7 0%, #ff04b0 96%);
-    filter: saturate(140%);
     /* background: #B8E1FC;
     background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #4d4d4d 100%); */
     box-shadow: 0 -7px 43px inset whitesmoke, 0 0 20px transparent;

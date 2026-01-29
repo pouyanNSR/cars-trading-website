@@ -11,14 +11,17 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import CardSample from './innerComponents/CardSample';
+import MainContext from "../context"
 
 import {carsData} from "../data/carsData"
 
 import styles from "../styledModule/SpecialPost.module.css"
+import { useContext } from "react";
 
 
 const SpecialPost = () => {
 
+  const {mode} = useContext(MainContext)
   // const data = [
   //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", location: "تهران", view: "2000" },
   //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
@@ -39,7 +42,7 @@ const SpecialPost = () => {
         right: "-20px",
         zIndex: 10,
         transform: "translateY(-50%)",
-        backgroundColor: "white",
+        backgroundColor: "background.main",
         boxShadow: 2,
         "&:hover": { backgroundColor: "#eee" },
       }}
@@ -56,13 +59,13 @@ const SpecialPost = () => {
         top: "50%",
         left: "-20px",
         transform: "translateY(-50%)",
-        backgroundColor: "white",
+        backgroundColor: "background.main",
         boxShadow: 2,
         zIndex: 10,
         "&:hover": { backgroundColor: "#eee" },
       }}
     >
-      <ArrowForwardIos />
+      <ArrowForwardIos sx={{color:"text.main"}}/>
 
     </IconButton>
   );
@@ -94,6 +97,8 @@ const SpecialPost = () => {
   return (
     <Box
       className={styles["special-post__container"]}
+      sx={{filter: mode === "light" ? "saturate(140%)" : "saturate(75%)"
+       }}
     >
       <Typography
         variant="h3"
@@ -118,7 +123,7 @@ const SpecialPost = () => {
         <Slider {...settings} sx={{ zIndex: 8 }}>
           {carsData.map((carData, index) => (
             <Box key={index} sx={{ px: 1, mb: 3,width:"80% !important" }} className={styles["special-post__card-container"]}>
-              <CardSample item={carData} isIcon={true}/>
+              <CardSample item={carData} isIcon={true} variant="gradient"/>
             </Box>
           ))}
         </Slider>

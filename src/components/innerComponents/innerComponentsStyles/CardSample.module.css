@@ -17,10 +17,10 @@
 
 .card__card-content {
   /* background:url(../../../assets/images.jpg) center/cover !important ; */
-  background: linear-gradient(rgba(255, 255, 255, 0.768)),
-    url(../../../assets/Gradient\ galaxy\ background\ 10.jpg) center/cover !important ;
-  background-size: 130% !important;
-  min-height: 100%;
+  /* background: linear-gradient(rgba(255, 255, 255, 0.768)),
+    url(../../../assets/Gradient\ galaxy\ background\ 10.jpg) center/cover ; */
+  /* background-size: 130% !important;
+  min-height: 100%; */
   /* background-position: 2000px 1000px !important; */
   /* box-shadow: var(--card-content-inset-box-shadow) */
 }
@@ -40,12 +40,12 @@
 
 .card__card-content--lable {
   font-weight: var(--card-font-weight) !important;
-  color: var(--text-mid-dark-color);
+  /* color: var(--text-mid-dark-color); */
   font-size: var(--card-font-size) !important;
 }
 
 .card__card-content--lable-title {
   font-weight: var(--card-title-font-weight) !important;
-  color: var(--text-dark-color);
+  /* color: var(--text-dark-color); */
   font-size: var(--card-title-font-size) !important;
 }
