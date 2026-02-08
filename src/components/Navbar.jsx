@@ -2,6 +2,7 @@ import {Typography,Button} from "@mui/material"
 import { ControlPointRounded } from '@mui/icons-material';
 import car from "../assets/vecteezy_car-creative-icon-design_30784893.jpg"
 import styles from "../styledModule/Navbar.module.css"
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -23,13 +24,13 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 bg-bg-light-subtle">
                             <li className="nav-item">
-                                <a className="nav-link active text-light" aria-current="page" href="/">صفحه اصلی</a>
+                                <Link to={"home"} className="nav-link active text-light" aria-current="page" href="/">صفحه اصلی</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-light" href="#">حساب کاربری</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-light" href="#">همه آگهی ها</a>
+                                <Link to={"cars"} className="nav-link text-light" href="#">همه آگهی ها</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-light" href="#">درباره ما</a>

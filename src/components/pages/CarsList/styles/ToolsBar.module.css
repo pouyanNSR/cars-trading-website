@@ -1,0 +1,157 @@
+.toolsbar__inner-container {
+  margin-top: 10px;
+}
+.toolsbar__confirm-button-container {
+  position: relative;
+  width: 100%;
+}
+
+.toolsbar__confirm-button-container::before {
+  content: "";
+  position: absolute;
+  width: 109%;
+  height: 170%;
+  border: 3.5px solid purple;
+  right: -10px;
+  top: -10px;
+  transition: border-color 0.2s linear;
+}
+
+.toolsbar__confirm-button-container--active::before {
+  border-color: rgb(48, 205, 109);
+}
+
+#toolsbar__confirm-button {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  /* border: 3.5px solid rgb(164, 255, 190); */
+  background: var(--primary-background-linear);
+  color: var(--text-light-color);
+  font-size: 22px;
+  text-shadow: 0 0 9px rgb(223, 166, 241);
+  box-shadow: -20px 30px 40px rgba(0, 0, 0, 0.821);
+  transform: translate(0, 0);
+  transition: 0.2s linear;
+  border-radius: 0% !important;
+}
+
+#toolsbar__confirm-button::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to left, rgba(53, 206, 150, 0.9));
+  top: 7.5px;
+  left: -14px;
+  height: 100%;
+  width: 14px;
+  transform: rotate(0deg) skewY(-45deg);
+  transition: 0.2s linear;
+}
+
+#toolsbar__confirm-button::after {
+  direction: ltr;
+  content: "";
+  position: absolute;
+  background: var(--primary-background-linear);
+  filter: brightness(60%);
+  bottom: -14px;
+  left: -7px;
+  height: 14px;
+  width: 100%;
+  transform: rotate(0deg) skewX(-45deg);
+  transition: 0.2s linear;
+}
+
+#toolsbar__confirm-button:hover {
+  transform: translate(-3px, 3px);
+  box-shadow: -20px 20px 30px rgba(0, 0, 0, 0.402);
+  color: aliceblue;
+  /* try this one */
+  /* box-shadow: 0 0 13px #c4148f inset ; */
+}
+
+#toolsbar__confirm-button:hover::before {
+  top: 5px;
+  left: -10px;
+  height: 100%;
+  width: 10px;
+}
+
+#toolsbar__confirm-button:hover::after {
+  bottom: -10px;
+  left: -5px;
+  height: 10px;
+  width: 100%;
+}
+
+#toolsbar__confirm-button:active::before,
+#toolsbar__confirm-button:active::after {
+  box-shadow: 0 0 14px #682d8d inset;
+}
+.toolsbar__filters-container{
+  background-color: #682d8d;
+}
+
+
+/* Filters Container */
+
+.toolsbar__filters-contianer{
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 0 0 10px inset rgb(108, 79, 79); */
+  padding:10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+  border-radius: 24px;
+  /* background: rgb(245, 238, 235); */
+  /* outline: 8px solid #dfc5ba; */
+}
+.toolsbar__inner-filters-container {
+  position: relative;
+  padding: 0;
+  height: 60px;
+  /* background-color: aqua; */
+  width: 65%;
+}
+
+/* Filter Input */
+
+
+#submit-price-button{
+  width: 100%;
+  height: 100%;
+  background-color: purple;
+  color: var(--text-light-color);
+  text-align: center;
+}
+
+.MuiPaper-root{
+  background-color: #311146 !important;
+}
+
+.toolsbar__info-container{
+  padding-right: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  color: var(--text-light-color);
+  gap: 17px;
+}
+
+.toolsbar__info-box{
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  /* color: rgb(74, 71, 74); */
+}
+
+.toolsbar__info{
+  /* color:purple; */
+  font-weight: 900 !important;
+}

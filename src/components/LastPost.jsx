@@ -1,4 +1,7 @@
 import { Grid, Typography, Box } from "@mui/material";
+import { motion } from "motion/react";
+
+import city from "../assets/chicago-downtown-3840x2160-21348.jpg";
 
 import CardSample from "./innerComponents/CardSample";
 
@@ -6,10 +9,13 @@ import styles from "../styledModule/LastPost.module.css";
 import MainContext from "../context";
 
 import { carsData } from "../data/carsData";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const LastPost = () => {
   const { mode } = useContext(MainContext);
+
+  // const MotionGrid = motion(Grid);
+  const [active, setActive] = useState(false);
 
   const getBackgroundStyles = () => {
     if (mode === "dark") {
@@ -40,7 +46,23 @@ const LastPost = () => {
         <Grid
           container
           className={styles["last-post__inner-container"]}
-          rowSpacing={13}
+          rowSpacing={15}        
+          // component={motion.div}
+          // whileHover={() => setActive(true)}
+          // onViewportEnter={() =>setActive(true)}
+          // onViewportLeave={() => setActive(false)}
+          // container
+          // className={styles["last-post__inner-container"]}
+          // rowSpacing={13}
+          // sx={{
+          //   "&::after": {
+          //     background: active
+          //       ? `url(${city}) center/cover`
+          //       : `linear-gradient(rgba(94, 6, 111, 0.997),rgba(23, 252, 206, 0.953))`,
+          //     opacity: active ? 1 : 0,
+          //     transition: "opacity 1.2s ease",
+          //   },
+          // }}
         >
           {carsData.map((carData, index) => (
             <Grid

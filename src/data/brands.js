@@ -10,14 +10,14 @@ import bmw from "../assets/brands/258759.png";
 import mitsubishi from "../assets/brands/258822.png";
 
 export const brands = [
-  { image: peugeot },
-  { image: renault },
-  { image: nissan },
-  { image: mazda },
-  { image: mvm },
-  { image: suzuki },
-  { image: jac },
-  { image: toyota },
-  { image: bmw },
-  { image: mitsubishi },
+  { name:"peugeot",image: peugeot },
+  { name:"renault",image: renault },
+  { name:"nissan",image: nissan },
+  { name:"mazda",image: mazda },
+  { name:"mvm",image: mvm },
+  { name:"suzuki",image: suzuki },
+  { name:"jac",image: jac },
+  { name:"toyota",image: toyota },
+  { name:"bmw",image: bmw },
+  { name:"mitsubishi",image: mitsubishi },
 ];

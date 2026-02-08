@@ -12,10 +12,11 @@ export const lightTheme = createTheme({
     },
     text: {
       main: "rgb(61, 61, 61)",
-
+      light:"rgb(74, 71, 74)"
     },
     background: {
       main: "rgb(231, 233, 234)",
+      carsPage:"rgb(255,240,240)"
     }
   },
   typography: {
@@ -35,9 +36,11 @@ export const darkTheme = createTheme({
     },
     text: {
       main: "aliceblue",
+      light:"rgba(186, 183, 186, 1)"
     },
     background: {
       main: "rgb(80, 84, 89)",
+      carsPage:"rgba(24, 20, 22, 0.99)"
     },
   },
   typography: {

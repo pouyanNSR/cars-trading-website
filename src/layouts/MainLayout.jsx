@@ -10,6 +10,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import styles from "./MainLayout.module.css"
 
 import { lightTheme, darkTheme } from "./theme";
+import { useContext } from "react";
 
 export const theme = createTheme({
   direction: "rtl",
@@ -31,6 +32,9 @@ const cacheRTL = createCache({
   key: "muirtl",
   stylisPlugins: [prefixer, rtlPlugin],
 });
+
+
+
 const MainLayout = ({ children, mode}) => {
   const theme = mode === "dark" ? darkTheme : lightTheme;
 

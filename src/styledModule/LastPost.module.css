@@ -58,8 +58,15 @@
   width: 80%;
   height: 40%;
   margin-top: 21.5%;
-  background: linear-gradient(rgba(94, 6, 111, 0.997),rgba(23, 252, 206, 0.953))/*, url(../assets/cosmic-light-trails-3840x2160-20467.jpg) center/cover*/ ;
+  background: 
+  url(../assets/chicago-downtown-3840x2160-21348.jpg) center/cover ;
+  /* linear-gradient(rgba(94, 6, 111, 0.997),rgba(23, 252, 206, 0.953)) */
+  /* transition: 1s ease-in-out; */
 }
+
+/* .last-post__inner-container:hover::after{
+  background:url(../assets/chicago-downtown-3840x2160-21348.jpg) center/cover;
+} */
 
 #last-post__titr {
   outline: 5px solid rgb(95, 47, 107);

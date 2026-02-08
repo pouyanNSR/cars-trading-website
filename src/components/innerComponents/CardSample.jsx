@@ -17,6 +17,7 @@ import {
 } from "@mui/material";
 
 import galexy from "../../assets/Gradientgalaxy.jpg";
+import cosmic from "../../assets/cosmic-light-trails-3840x2160-20467.jpg"
 
 import MainContext from "../../context";
 
@@ -35,7 +36,8 @@ const CardSample = ({
   const getBackgroundStyles = () => {
     if (mode === "dark") {
       return{
-        background: "rgb(74,74,47)",
+        background: `rgb(74,74,47)`
+        // background: `linear-gradient(rgba(35, 8, 74, 0.96)),url(${cosmic}) center/cover`,
       }
     }
 

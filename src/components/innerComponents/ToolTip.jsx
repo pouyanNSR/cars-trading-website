@@ -10,7 +10,6 @@ import MainContext from "../../context"
 import { useContext, useState } from "react";
 
 const ToolTip = () => {
-    const [light,setLight] = useState(true)
     const {handleThemeChange,mode} = useContext(MainContext)
 
     // const handleTheme = () =>{
