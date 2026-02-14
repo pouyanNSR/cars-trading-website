@@ -13,7 +13,7 @@
 #special-post__titr{
     color: var(--titr-text-color) !important;
     text-shadow:var(--titr-text-shadow);
-    box-shadow: var(--titr-box-shadow);
+    /* box-shadow: var(--titr-box-shadow); */
     background: var(--titr-background);
     width: 25%;
     margin: auto;

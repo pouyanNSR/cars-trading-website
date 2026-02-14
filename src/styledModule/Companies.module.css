@@ -5,7 +5,6 @@
     box-shadow: 0 8px 20px 0px inset rgb(239, 237, 237), 0 -18px 20px 20px rgb(239, 237, 237);
     border-top: 6px solid rgb(77, 77, 77);
     padding: var(--section-padding-vertical);
-    margin-bottom: 3% !important;
 }
 .companies__titr{
     font-family: "vazir" !important;

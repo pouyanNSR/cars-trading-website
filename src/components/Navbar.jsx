@@ -11,18 +11,18 @@ const Navbar = () => {
             <nav className={`navbar navbar-expand-lg ${styles["navbar"]}`} >
                 <div className={`container-fluid ${styles["navbar__container"]}`}>
                     <a className="navbar-brand h-100 p-0 d-flex align-items-center justify-content-start" style={{gap:"10px"}} href="#">
-                        <div style={{width:"70px",height:"65px"}}>
-                            <img  src={car} alt="aks" width="100%" height="100%" style={{borderRadius:"50px",border:"3px solid aliceblue"}} />
+                        <div style={{width:"60px",height:"55px"}}>
+                            <img  src={car} alt="aks" width="100%" height="100%" style={{borderRadius:"50px",border:"1px solid white"}} />
                         </div>
                         <div className="d-flex align-items-center" style={{height:"69px"}}>
-                            <p style={{fontSize:"40px",color:"whitesmoke",padding:0,margin:0,fontStyle:"italic",textShadow:"0 0 9px black"}}>KhodroBaz</p>
+                            <p style={{fontSize:"35px",color:"whitesmoke",padding:0,margin:0,fontStyle:"italic",textShadow:"0 0 9px black"}}>KhodroBaz</p>
                         </div>
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 bg-bg-light-subtle">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 bg-bg-light-subtle gap-2">
                             <li className="nav-item">
                                 <Link to={"home"} className="nav-link active text-light" aria-current="page" href="/">صفحه اصلی</Link>
                             </li>
@@ -56,7 +56,7 @@ const Navbar = () => {
                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                   </li> */}
                         </ul>
-                        <Button sx={{ backgroundColor: "white",marginRight:"14px" }} padding="auto 3px" variant='contained' endIcon={<ControlPointRounded />}>
+                        <Button sx={{ backgroundColor: "white",margin:"auto 17px" }} padding="auto 3px" variant='contained' endIcon={<ControlPointRounded />}>
                             <Typography variant='caption' color="black">
                                 ثبت آگهی
                             </Typography>

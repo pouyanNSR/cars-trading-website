@@ -14,6 +14,8 @@ import CardSample from './innerComponents/CardSample';
 import MainContext from "../context"
 
 import {carsData} from "../data/carsData"
+import { motion } from "motion/react";
+
 
 import styles from "../styledModule/SpecialPost.module.css"
 import { useContext } from "react";
@@ -97,14 +99,19 @@ const SpecialPost = () => {
   return (
     <Box
       className={styles["special-post__container"]}
-      sx={{filter: mode === "light" ? "saturate(140%)" : "saturate(75%)"
-       }}
+      sx={{filter: mode === "light" ? "saturate(140%)" : "saturate(75%)",
+        // marginTop:"100vh"
+      }}
     >
       <Typography
         variant="h3"
         sx={{ fontWeight: "bold" }}
         dir="rtl"
         id={styles["special-post__titr"]}
+        component={motion.h3}
+        initial={{ filter:"contrast(20%)",boxShadow:"none" }}
+        whileInView={{  filter:"contrast(140%)",boxShadow:"var(--titr-box-shadow)"}}
+        transition={{ duration: "2.5"}}
       >
         آگهی‌های ویژه
       </Typography>

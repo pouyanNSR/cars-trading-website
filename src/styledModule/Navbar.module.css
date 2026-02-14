@@ -1,9 +1,10 @@
 .navbar{
   background: var(--primary-background-linear) !important;
   width: 100vw;
-  height: 12vh;
+  height: 9.5vh;
   position: fixed;
   z-index: 1000;
+  font-size: 16px;
   transition: all 0.2s linear;
 }
 .navbar:hover{
