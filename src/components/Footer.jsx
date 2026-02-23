@@ -1,5 +1,4 @@
 
-import React from "react";
 import {
   Box,
   Container,
@@ -16,12 +15,7 @@ import {
   LinkedIn,
   Email,
 } from "@mui/icons-material";
-import { motion } from "motion/react";
-
-
-
 import styles from "../styledModule/Footer.module.css"
-
 
 const Footer = () => {
     const year = new Date().getFullYear();

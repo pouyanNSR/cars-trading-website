@@ -24,15 +24,6 @@ import { useContext } from "react";
 const SpecialPost = () => {
 
   const {mode} = useContext(MainContext)
-  // const data = [
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" },
-  //   { title: "رانا دنده ای", price: "77,000,000", ditance: "45000", producingYear: "1398", numberOfTime: 3, periodOfTime: "هفته", time: " هفته ", location: "تهران", view: "2000" }
-  // ];
 
   // Custom arrow components
   const PrevArrow = ({ onClick }) => (
@@ -115,16 +106,6 @@ const SpecialPost = () => {
       >
         آگهی‌های ویژه
       </Typography>
-{/* 
-      <Box className={styles["special-post__slider-container"]}>
-        <Slider {...settings} sx={{ zIndex: 8 }}>
-          {data.map((item, index) => (
-            <Box key={index} sx={{ px: 1, mb: 3,width:"80% !important" }} className={styles["special-post__card-container"]}>
-              <CardSample item={item} isIcon={true}/>
-            </Box>
-          ))}
-        </Slider>
-      </Box> */}
       
       <Box className={styles["special-post__slider-container"]}>
         <Slider {...settings} sx={{ zIndex: 8 }}>

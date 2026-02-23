@@ -20,4 +20,7 @@ export const brands = [
   { name:"toyota",image: toyota },
   { name:"bmw",image: bmw },
   { name:"mitsubishi",image: mitsubishi },
+  { name:"ایرانخودرو",image: null },
+  { name:"سایپا",image: null },
+
 ];

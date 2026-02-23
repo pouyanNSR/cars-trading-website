@@ -1,8 +1,8 @@
 import SearchBox from "./innerComponents/SearchBox";
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import city from "../assets/chicago.jpg";
 import MainContext from "../context";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 const LandingPage = () => {
   const { mode } = useContext(MainContext);
@@ -18,7 +18,7 @@ const LandingPage = () => {
   const ticking = useRef(false);
 
   useEffect(() => {
-    const maxScroll = window.innerHeight * 0; // چقدر جمع شود
+    const maxScroll = window.innerHeight * 0; // how much (....* 0)
 
     const update = () => {
       const scrollY = window.scrollY;
@@ -60,7 +60,7 @@ const LandingPage = () => {
           transition: "transform 0.1s linear",
           position: "sticky",
           top: 0,
-          zIndex: -100,
+          zIndex:0,
           overflow:"hidden",
           willChange:"transform",
           transform:"translateZ(0)"
@@ -81,7 +81,7 @@ const LandingPage = () => {
                 : "saturate(1.7)",
           }}
         />
-        <SearchBox />
+        <SearchBox/>
       </Box>
     </>
   );

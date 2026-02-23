@@ -1,4 +1,3 @@
-
 import { useContext, useEffect, useRef, useState } from "react";
 import styles from "../styledModule/Advertisement.module.css"
 import {
@@ -7,7 +6,6 @@ import {
     Typography,
 } from "@mui/material";
 import MainContext from "../context"
-
 import Typed from "typed.js";
 
 const Advertisement = () => {

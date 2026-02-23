@@ -2,20 +2,16 @@ import { useContext, useState } from "react";
 
 import {
   ManageSearchRounded,
-  TollRounded,
   MyLocationRounded,
   DirectionsCarFilledRounded,
 } from "@mui/icons-material";
 
 import {
-  Modal,
   Grid,
   Box,
   Typography,
   Button,
-  List,
-  ListItemButton,
-  ListItemText,
+
 } from "@mui/material";
 import styles from "./innerComponentsStyles/SearchBox.module.css";
 import OutlineFocusInput from "../../commonCodes/OutlineFocusInput";
@@ -66,7 +62,7 @@ const SearchBox = () => {
   return (
     <Grid
       className={` container ${styles["search-box"]} `}
-      sx={{ backgroundColor: "var" }}
+      sx={{ backgroundColor: "var"}}
     >
       <Grid
         className={`row justify-content-center gy-2 gy-sm-0 ${styles["search-box__row"]}`}
@@ -128,57 +124,6 @@ const SearchBox = () => {
               getOptionLabel={(opt) => opt.name}
               direction="ltr"
             />
-            {/* <Modal open={open} onClose={() => setOpen(false)}>
-                            <Box
-                                sx={{
-                                    position: "absolute",
-                                    top: "50%",
-                                    left: "50%",
-                                    transform: "translate(-50%, -50%)",
-                                    width: 320,
-                                    bgcolor: "#750ca2",
-                                    borderRadius: 2,
-                                    boxShadow: 24,
-                                    p: 3,
-                                }}
-                            >
-                                <Typography variant="h6" mb={2} color="white">
-                                    استان مورد نظرتان را انتخاب کنید
-                                </Typography>
-
-                                <List sx={{
-                                    maxHeight:"500px",
-                                    overflow:"scroll",
-                                    background:"var(--modal-background-color)",
-                                    color:"rgb(247, 228, 244)",
-                                    overflowX:"hidden",
-                                    boxShadow:"0 0 15px var(--light-background)",
-                                    borderRadius:'3px'
-                                }}>
-                                    {locations.map((location,index) => (
-                                        <ListItemButton
-                                            key={location}
-                                            selected={location === selected}
-                                            onClick={() => handleSelect(location)}
-                                            sx={{borderBottom: index !== locations.length - 1 ?
-                                            "2px solid aliceblue" : "none",
-                                            "&:hover":{background:"rgba(0,0,0,0.4)"},
-                                        }}
-                                        >
-                                            <ListItemText primary={location.name} />
-                                        </ListItemButton>
-                                    ))}
-                                </List>
-
-                                <Box sx={{ textAlign: "right", mt: 2 }}>
-                                    <Button variant="outlined" onClick={() => setOpen(false)}
-                                        className={styles["location__modal--close-button"]}
-                                    >
-                                        خروج
-                                    </Button>
-                                </Box>
-                            </Box>
-                        </Modal> */}
           </Box>
         </Grid>
         <Grid

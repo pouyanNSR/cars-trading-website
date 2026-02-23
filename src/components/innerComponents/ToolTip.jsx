@@ -1,20 +1,16 @@
 import {Box, Tooltip, Fab } from "@mui/material";
 
-import { ArrowUpwardRounded, BedtimeRounded, Chat, Phone, Settings, WbSunnyRounded } from "@mui/icons-material";
+import { ArrowUpwardRounded, BedtimeRounded, Phone, Settings, WbSunnyRounded } from "@mui/icons-material";
 
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialIcon from "@mui/material/SpeedDialIcon";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 
 import MainContext from "../../context"
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const ToolTip = () => {
     const {handleThemeChange,mode} = useContext(MainContext)
-
-    // const handleTheme = () =>{
-    //     setLight( e => !e)
-    // }
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });

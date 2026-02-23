@@ -6,19 +6,7 @@ import {
   List,
   ListItemButton,
   ListItemText,
-  FormControl,
-  Select,
-  MenuItem,
-  TextField,
-  InputLabel,
-  Divider,
 } from "@mui/material";
-
-import { locations } from "../../data/locations";
-
-import { brands } from "../../data/brands";
-
-import { useState } from "react";
 
 const InputModal = ({
   open,

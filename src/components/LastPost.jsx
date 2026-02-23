@@ -1,7 +1,4 @@
 import { Grid, Typography, Box } from "@mui/material";
-import { motion } from "motion/react";
-
-import city from "../assets/chicago-downtown-3840x2160-21348.jpg";
 
 import CardSample from "./innerComponents/CardSample";
 
@@ -9,13 +6,13 @@ import styles from "../styledModule/LastPost.module.css";
 import MainContext from "../context";
 
 import { carsData } from "../data/carsData";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 const LastPost = () => {
   const { mode } = useContext(MainContext);
 
   // const MotionGrid = motion(Grid);
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
 
   const getBackgroundStyles = () => {
     if (mode === "dark") {

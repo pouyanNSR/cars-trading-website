@@ -7,10 +7,8 @@ import { prefixer } from "stylis";
 import { createTheme } from "@mui/material/styles";
 
 import Grid from "@mui/material/Unstable_Grid2";
-import styles from "./MainLayout.module.css"
 
 import { lightTheme, darkTheme } from "./theme";
-import { useContext } from "react";
 
 export const theme = createTheme({
   direction: "rtl",

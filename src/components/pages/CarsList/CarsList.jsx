@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
-import CardsList from "../../innerComponents/CardsList";
-
+import CardsList from "./CardsList";
 
 const CarsList = () => {
   return (

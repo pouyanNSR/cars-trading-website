@@ -6,15 +6,13 @@ import Advertisement from "../components/Advertisement";
 import LastPost from "../components/LastPost";
 import Companies from "../components/Companies";
 import Footer from "../components/Footer";
+import ContentLayer from "./ContentLayer";
 
 const HomeLayout = () => {
   return (
     <>
       <LandingPage />
-      <SpecialPost />
-      <Advertisement />
-      <LastPost />
-      <Companies />
+      <ContentLayer/>
       <Footer />
     </>
   );

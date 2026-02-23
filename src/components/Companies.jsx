@@ -1,14 +1,10 @@
-
 import { Box, Typography, Grid } from '@mui/material';
-
 import {brands} from "../data/brands"
-
 import { motion } from "motion/react";
-
 import styles from "../styledModule/Companies.module.css"
 
-
 const Companies = () => {
+    const filteredBrands = brands.filter( brand => brand.image ) // .filter(brand => brand.image !== null)
 
     return (
         <Box className={styles["companies__container"]}>
@@ -24,10 +20,10 @@ const Companies = () => {
             >
                 <Grid container columns={15} spacing={3} className={styles["companies__inner-container--brands-container"]}>
                     {
-                        brands.map((item, index) => (
+                        filteredBrands.map((item, index) => (
                             <Grid item sx={{ marginBottom: "70px",height: "180px" }} key={index} xs={6} md={3}>
                                 <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100%", height: "100%" }}>
-                                    <Box width="70%" height="100%" component="img" src={item.image} alt="images" />
+                                    <Box width="70%" height="100%" component="img" src={item?.image} alt="images" />
                                 </Box>
                             </Grid>
                         ))

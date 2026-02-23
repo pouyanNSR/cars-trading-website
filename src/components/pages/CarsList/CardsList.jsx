@@ -1,13 +1,12 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-
-import {carsList} from "../../data/carsList"
+import {postsInfo} from "../../../data/postsInfo"
 
 const CardsList = () => {
   return (
     <>
-      {carsList.map((car) => (
+      {postsInfo.map((post) => (
         <Card
-          key={car.id}
+          key={post.id}
           sx={{
             width: "100%",
             display: "flex",
@@ -37,7 +36,7 @@ const CardsList = () => {
               }}
             >
               <Typography fontFamily="shabnam" variant="h6">
-                {car.title}
+                {post.title}
               </Typography>
               <Box
                 sx={{
@@ -53,10 +52,10 @@ const CardsList = () => {
                 }}
               >
                 <Typography fontSize="12px" fontFamily="shabnam">
-                  {car.numberOfTime}
+                  {post.numberOfTime}
                 </Typography>
                 <Typography fontSize="12px" fontFamily="shabnam">
-                  {car.periodOfTime}
+                  {post.periodOfTime}
                 </Typography>
                 <Typography fontSize="12px" fontFamily="shabnam">
                   پیش
@@ -70,7 +69,7 @@ const CardsList = () => {
               fontSize={14}
               mt={1}
             >
-              {car.producingYear} • {car.ditance} کیلومتر
+              {post.producingYear} • {post.ditance} کیلومتر
             </Typography>
 
             <Typography
@@ -80,7 +79,7 @@ const CardsList = () => {
               color="rgba(70, 164, 247, 0.7)"
               mt={0.5}
             >
-              {car.view} بازدید
+              {post.view} بازدید
             </Typography>
 
             <Box
@@ -92,19 +91,19 @@ const CardsList = () => {
               mt={0.5}
             >
               <Typography fontFamily="shabnam" color="text.secondary">
-                {car.location}
+                {post.location}
               </Typography>
               <Typography fontFamily="shabnam" fontWeight="bold">
-                {car.price} {car.price === "توافقی" ? null : "تومان"}
+                {post.price} {post.price === "توافقی" ? null : "تومان"}
               </Typography>
             </Box>
           </CardContent>
 
-          {car.img ? (
+          {post.img ? (
             <CardMedia
               component="img"
-              image={car.img}
-              alt={car.title}
+              image={post.img}
+              alt={post.title}
               sx={{
                 opacity: "0.9",
                 width: 160,

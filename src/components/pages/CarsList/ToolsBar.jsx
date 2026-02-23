@@ -1,11 +1,7 @@
 import {
-  Modal,
   Box,
   Typography,
   Button,
-  List,
-  ListItemButton,
-  ListItemText,
   FormControl,
   Select,
   MenuItem,
@@ -21,7 +17,7 @@ import { brands } from "../../../data/brands";
 
 import styles from "./styles/ToolsBar.module.css";
 import { useContext, useState } from "react";
-import { carsList } from "../../../data/carsList";
+import { postsInfo } from "../../../data/postsInfo";
 import InputModal from "../../innerComponents/InputModal";
 import CarsListPageInput from "../../innerComponents/CarsListPageInput";
 
@@ -300,7 +296,7 @@ const ToolsBar = () => {
               color={mode === "light" ? "purple" : "rgba(253, 201, 229, 0.85)"}
               fontFamily="shabnam"
             >
-              {carsList.length}
+              {postsInfo.length}
             </Typography>
           </Box>
         </Box>

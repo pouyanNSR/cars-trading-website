@@ -1,7 +1,7 @@
 import custumCar from "../assets/download.jpg";
 
 
-export const carsList = [
+export const postsInfo = [
   {
     id: 1,
     title: "رنو پی‌کی",

@@ -17,7 +17,6 @@ import {
 } from "@mui/material";
 
 import galexy from "../../assets/Gradientgalaxy.jpg";
-import cosmic from "../../assets/cosmic-light-trails-3840x2160-20467.jpg"
 
 import MainContext from "../../context";
 
@@ -102,10 +101,6 @@ const CardSample = ({
         // sx={{ background: mode === "dark" && "rgba(43, 43, 43, 0.85)" }}
         sx={{ ...getBackgroundStyles() }}
         className={styles["card__card-content"]}
-        // id={
-        //   componentClass === "last-post" &&
-        //   styles["card__card-content--last-post"]
-        // }
       >
         <Typography
           color="text.main"
