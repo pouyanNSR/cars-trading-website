@@ -24,22 +24,22 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0 bg-bg-light-subtle gap-2">
                             <li className="nav-item">
-                                <Link to={"home"} className="nav-link active text-light" aria-current="page" href="/">صفحه اصلی</Link>
+                                <Link to={"home"} className="nav-link active text-light" aria-current="page">صفحه اصلی</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-light" href="#">حساب کاربری</a>
                             </li>
                             <li className="nav-item">
-                                <Link to={"cars"} className="nav-link text-light" href="#">همه آگهی ها</Link>
+                                <Link to={"cars"} className="nav-link text-light">همه آگهی ها</Link>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link text-light" href="#">درباره ما</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-light" href="#">تماس با ما</a>
+                                <a href="#footer" className="nav-link text-light">تماس با ما</a>
                             </li>
                             <li className="nav-item" >
-                                <a className="nav-link text-light" href="#">جستجو</a>
+                                <Link to={"/"} state={{scrollTo:"search"}} className="nav-link text-light" href="#">جستجو</Link>
                             </li>
                             {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

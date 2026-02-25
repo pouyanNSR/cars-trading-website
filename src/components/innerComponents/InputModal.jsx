@@ -18,13 +18,10 @@ const InputModal = ({
   getOptionLabel = (opt) => opt,
   direction = "rtl",
 }) => {
-  
   return (
-    <Modal 
-      open={open} 
-      onClose={onClose}
-    >
+    <Modal open={open} onClose={onClose}>
       <Box
+        className="sssss"
         sx={{
           position: "absolute",
           top: "50%",
@@ -35,6 +32,9 @@ const InputModal = ({
           borderRadius: 2,
           boxShadow: 24,
           p: 3,
+          "&:focus-visible": {
+            outline: "none",
+          },
         }}
       >
         <Typography variant="h6" mb={2} color="aliceblue">
@@ -50,17 +50,18 @@ const InputModal = ({
             overflowX: "hidden",
             boxShadow: "0 0 15px var(--light-background)",
             borderRadius: "3px",
+            padding: 0,
           }}
         >
           {options.map((option, index) => {
-            const value = getOptionLabel(option);
+            const item = getOptionLabel(option);
 
             return (
               <ListItemButton
                 key={index}
-                //* if value is equal to choosed Brand or Province, the selected mode will be activated (Highlight the value section)
-                selected={value === selectedValue}
-                onClick={() => onSelect(value)}
+                //* if item is equal to choosed Brand or Province, the selected mode will be activated (Highlight the value section)
+                selected={item.value === selectedValue}
+                onClick={() => onSelect(item.value)}
                 sx={{
                   borderBottom:
                     index !== options.length - 1
@@ -70,7 +71,7 @@ const InputModal = ({
                   "&.Mui-selected": { backgroundColor: "red" },
                 }}
               >
-                <ListItemText dir={direction} primary={value} />
+                <ListItemText dir={direction} primary={item.name} />
               </ListItemButton>
             );
           })}
@@ -87,8 +88,6 @@ const InputModal = ({
 };
 export default InputModal;
 
-
-// const InputModal = ({
 //   open,
 //   setOpen,
 //   selectedProvince,

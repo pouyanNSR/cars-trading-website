@@ -17,7 +17,6 @@ import { brands } from "../../../data/brands";
 
 import styles from "./styles/ToolsBar.module.css";
 import { useContext, useState } from "react";
-import { postsInfo } from "../../../data/postsInfo";
 import InputModal from "../../innerComponents/InputModal";
 import CarsListPageInput from "../../innerComponents/CarsListPageInput";
 
@@ -26,14 +25,19 @@ const ToolsBar = () => {
     mode,
     open,
     setOpen,
-    selectedProvince,
-    setSelectedProvince,
-    selectedBrand,
-    setSelectedBrand,
+    filtered,
+    setFiltered,
+    filteredPosts
+    // min,
+    // setMin,
+    // max,
+    // setMax,
+    // selectedProvince,
+    // setSelectedProvince,
+    // selectedBrand,
+    // setSelectedBrand,
   } = useContext(MainContext);
 
-  const [min, setMin] = useState("");
-  const [max, setMax] = useState("");
   const [openPrice, setOpenPrice] = useState(false);
   const [clicked, setClicked] = useState(false);
 
@@ -49,11 +53,17 @@ const ToolsBar = () => {
   //   setSelectedBrand(value);
   //   setOpen(null);
   // };
-  const handleClick = () => {
+  const clearFilters = () => {
     setClicked(true);
     setTimeout(() => {
       setClicked(false);
     }, 3000);
+    setFiltered({
+      selectedProvince:"",
+      selectedBrand:"",
+      min:"",
+      max:"",
+    })
   };
 
   const applyFilter = () => {
@@ -73,8 +83,8 @@ const ToolsBar = () => {
           clicked ? styles["toolsbar__confirm-button-container--active"] : null
         }`}
       >
-        <Button id={styles["toolsbar__confirm-button"]} onClick={handleClick}>
-          اعمال فیلتر
+        <Button id={styles["toolsbar__confirm-button"]} onClick={clearFilters}>
+          پاک کردن 
         </Button>
       </Box>
 
@@ -83,9 +93,10 @@ const ToolsBar = () => {
         {/* Province Input */}
         <Box className={styles["toolsbar__inner-filters-container"]}>
           <CarsListPageInput
-            selectedValue={selectedProvince.carsListModal}
+            // selectedValue={selectedProvince.carsListModal}
+            selectedValue={filtered.selectedProvince.carsListModal}
             onClick={() => setOpen("CarsListProvinces")}
-            title="انتخاب استان"
+            title={locations[0].name}
           />
 
           {/* Modal */}
@@ -94,12 +105,15 @@ const ToolsBar = () => {
             onClose={() => setOpen(null)}
             title="استان مورد نظرتان را انتخاب کنید"
             options={locations}
-            selectedValue={selectedProvince.carsListModal}
+            selectedValue={filtered.selectedProvince.carsListModal}
             onSelect={(value) => {
-              setSelectedProvince((prev) => ({...prev,carsListModal:value}));
+              // setSelectedProvince((prev) => ({...prev,carsListModal:value}));
+              setFiltered((prev) => ({...prev,selectedProvince:{
+                ...prev.selectedProvince,carsListModal:value
+              }}));
               setOpen(null);
             }}
-            getOptionLabel={(opt) => opt.name}
+            getOptionLabel={(opt) => opt}
             direction="ltr"
           />
           {/* <InputModal
@@ -114,9 +128,10 @@ const ToolsBar = () => {
         {/* Brand Input */}
         <Box className={styles["toolsbar__inner-filters-container"]}>
           <CarsListPageInput
-            selectedValue={selectedBrand}
+            // selectedValue={selectedBrand.carsListModal}
+            selectedValue={filtered.selectedBrand}
             onClick={() => setOpen("Brands")}
-            title="انتخاب برند"
+            title={brands[0].name}
           />
 
           {/* Modal */}
@@ -125,12 +140,14 @@ const ToolsBar = () => {
             onClose={() => setOpen(null)}
             title="برند مورد نظرتان را انتخاب کنید"
             options={brands}
-            selectedValue={selectedBrand}
+            // selectedValue={selectedBrand}
+            selectedValue={filtered.selectedBrand}
             onSelect={(value) => {
-              setSelectedBrand(value);
+              // setSelectedBrand(value);
+              setFiltered((prev) => ({...prev,selectedBrand:value}));
               setOpen(null);
             }}
-            getOptionLabel={(opt) => opt.name}
+            getOptionLabel={(opt) => opt}
             direction="rtl"
           />
 
@@ -167,8 +184,10 @@ const ToolsBar = () => {
                 <TextField
                   autoComplete="off"
                   label="حداقل(تومان)"
-                  value={min}
-                  onChange={(e) => setMin(e.target.value)}
+                  // value={min}
+                  value={filtered.min}
+                  // onChange={(e) => setMin(e.target.value)}
+                  onChange={(e) => setFiltered((prev) => ({...prev,min:e.target.value}))}
                   // inputProps={{
                   //   startAdornment:(
                   //     <InputAdornment position="end">gggrrrr</InputAdornment>
@@ -178,8 +197,9 @@ const ToolsBar = () => {
                 <TextField
                   autoComplete="off"
                   label="حداکثر(تومان)"
-                  value={max}
-                  onChange={(e) => setMax(e.target.value)}
+                  value={filtered.max}
+                  // onChange={(e) => setMax(e.target.value)}
+                  onChange={(e) => setFiltered((prev) => ({...prev,max:e.target.value}))}
                 />
               </Box>
             </MenuItem>
@@ -212,7 +232,7 @@ const ToolsBar = () => {
               }}
             ></Box>
             <Typography color="text.light">پایین‌ترین قیمت:</Typography>
-            {min === "" ? (
+            {filtered.min === "" ? (
               <Typography color="text.primary">مشخص نشده</Typography>             
             ) : (
               <>
@@ -225,7 +245,7 @@ const ToolsBar = () => {
                   fontFamily="shabnam"
                 >
                   {" "}
-                  {setFormattedPrice(min)}{" "}
+                  {setFormattedPrice(filtered.min)}{" "}
                 </Typography>
                 <Typography
                   className={styles["toolsbar__info"]}
@@ -251,7 +271,7 @@ const ToolsBar = () => {
               }}
             ></Box>
             <Typography color="text.light">بالاترین قیمت:</Typography>
-            {max === "" ? (
+            {filtered.max === "" ? (
               <Typography color="text.primary">مشخص نشده</Typography>             
             ) : (
               <>
@@ -264,7 +284,7 @@ const ToolsBar = () => {
                   fontFamily="shabnam"
                 >
                   {" "}
-                  {setFormattedPrice(max)}{" "}
+                  {setFormattedPrice(filtered.max)}{" "}
                 </Typography>
                 <Typography
                   className={styles["toolsbar__info"]}
@@ -296,7 +316,7 @@ const ToolsBar = () => {
               color={mode === "light" ? "purple" : "rgba(253, 201, 229, 0.85)"}
               fontFamily="shabnam"
             >
-              {postsInfo.length}
+              {filteredPosts.length}
             </Typography>
           </Box>
         </Box>

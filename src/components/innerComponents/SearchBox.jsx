@@ -55,8 +55,10 @@ const SearchBox = () => {
     mode,
     open,
     setOpen,
-    selectedProvince,
-    setSelectedProvince,
+    filtered,
+    setFiltered
+    // selectedProvince,
+    // setSelectedProvince,
   } = useContext(MainContext);
 
   return (
@@ -83,7 +85,8 @@ const SearchBox = () => {
                 id={styles["location__input-text"]}
                 sx={{ color: "text.main" }}
               >
-                {selectedProvince.landingpageModal || "انتخاب استان..."}
+                {/* {selectedProvince.landingpageModal || "انتخاب استان..."} */}
+                {filtered.selectedProvince.landingpageModal || "انتخاب استان..."}
               </Box>
               <Box>
                 <MyLocationRounded
@@ -116,12 +119,15 @@ const SearchBox = () => {
               onClose={() => setOpen(null)}
               title="استان مورد نظرتان را انتخاب کنید"
               options={locations}
-              selectedValue={selectedProvince.landingpageModal}
+              selectedValue={filtered.selectedProvince.landingpageModal}
               onSelect={(value) => {
-                setSelectedProvince((prev) => ({...prev,landingpageModal:value}));
+                // setSelectedProvince((prev) => ({...prev,landingpageModal:value}));
+                setFiltered((prev) => ({...prev,selectedProvince:{
+                ...prev.selectedProvince,landingpageModal:value
+              }}));
                 setOpen(null);
               }}
-              getOptionLabel={(opt) => opt.name}
+              getOptionLabel={(opt) => opt}
               direction="ltr"
             />
           </Box>

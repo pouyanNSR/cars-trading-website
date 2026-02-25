@@ -16,7 +16,9 @@ export const lightTheme = createTheme({
     },
     background: {
       main: "rgb(231, 233, 234)",
-      carsPage:"rgb(255,240,240)"
+      carsPage:"rgb(255,240,240)",
+      cards:"rgba(247, 238, 238, 0.99)"
+
     }
   },
   typography: {
@@ -40,7 +42,8 @@ export const darkTheme = createTheme({
     },
     background: {
       main: "rgb(80, 84, 89)",
-      carsPage:"rgba(24, 20, 22, 0.99)"
+      carsPage:"rgba(21, 20, 20, 0.99)",
+      cards:"rgba(29, 27, 27, 0.99)"
     },
   },
   typography: {

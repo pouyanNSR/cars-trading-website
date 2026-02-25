@@ -10,17 +10,18 @@ import bmw from "../assets/brands/258759.png";
 import mitsubishi from "../assets/brands/258822.png";
 
 export const brands = [
-  { name:"peugeot",image: peugeot },
-  { name:"renault",image: renault },
-  { name:"nissan",image: nissan },
-  { name:"mazda",image: mazda },
-  { name:"mvm",image: mvm },
-  { name:"suzuki",image: suzuki },
-  { name:"jac",image: jac },
-  { name:"toyota",image: toyota },
-  { name:"bmw",image: bmw },
-  { name:"mitsubishi",image: mitsubishi },
-  { name:"ایرانخودرو",image: null },
-  { name:"سایپا",image: null },
+  { name:"همه‌ی برند ها",image: null, value:""},
+  { name:"peugeot",image: peugeot,value:"peugeot" },
+  { name:"renault",image: renault,value:"renault" },
+  { name:"nissan",image: nissan,value:"nissan" },
+  { name:"mazda",image: mazda,value:"mazda" },
+  { name:"mvm",image: mvm,value:"mvm" },
+  { name:"suzuki",image: suzuki,value:"suzuki" },
+  { name:"jac",image: jac,value:"jac"},
+  { name:"toyota",image: toyota,value:"toyota" },
+  { name:"bmw",image: bmw,value:"bmw" },
+  { name:"mitsubishi",image: mitsubishi,value:"mitsubishi" },
+  { name:"ایرانخودرو",image: null,value:"ایرانخودرو" },
+  { name:"سایپا",image: null,value:"سایپا" },
 
 ];

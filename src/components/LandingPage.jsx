@@ -3,8 +3,12 @@ import { Box } from "@mui/material";
 import city from "../assets/chicago.jpg";
 import MainContext from "../context";
 import { useContext, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 const LandingPage = () => {
+  const location = useLocation();
+  const heroRef = useRef(null);
+  const ticking = useRef(false);
   const { mode } = useContext(MainContext);
   // useEffect(() => {
   // const handleScroll = () => {
@@ -14,8 +18,6 @@ const LandingPage = () => {
   //   window.addEventListener("scroll", handleScroll);
   //   return () => window.removeEventListener("scroll", handleScroll);
   // }, []);
- const heroRef = useRef(null);
-  const ticking = useRef(false);
 
   useEffect(() => {
     const maxScroll = window.innerHeight * 0; // how much (....* 0)
@@ -40,9 +42,16 @@ const LandingPage = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+
+  useEffect(() => {
+    if (location.state?.scrollTo === "search") {
+      const element = document.getElementById("search");
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [location]);
 
   return (
     <>
@@ -60,10 +69,10 @@ const LandingPage = () => {
           transition: "transform 0.1s linear",
           position: "sticky",
           top: 0,
-          zIndex:0,
-          overflow:"hidden",
-          willChange:"transform",
-          transform:"translateZ(0)"
+          zIndex: 0,
+          overflow: "hidden",
+          willChange: "transform",
+          transform: "translateZ(0)",
           /*background:`linear-gradient(rgba(190, 22, 200, 0.2),rgba(0, 0, 0, 0.4)) ,url(${city}) center/cover`*/
         }}
       >
@@ -81,7 +90,7 @@ const LandingPage = () => {
                 : "saturate(1.7)",
           }}
         />
-        <SearchBox/>
+        <SearchBox />
       </Box>
     </>
   );

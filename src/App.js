@@ -1,13 +1,7 @@
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 
-import LandingPage from "./components/LandingPage";
 import Navbar from "./components/Navbar";
-import SpecialPost from "./components/SpecialPost";
-import Advertisement from "./components/Advertisement";
 
-import LastPost from "./components/LastPost";
-import Companies from "./components/Companies";
-import Footer from "./components/Footer";
 import ToolTip from "./components/innerComponents/ToolTip";
 import MainLayout from "./layouts/MainLayout";
 import { useEffect, useState } from "react";
@@ -17,6 +11,9 @@ import MainContext from "./context";
 import CarsListPageContainer from "./components/pages/CarsList/CarsListPageContainer";
 import HomeLayout from "./layouts/HomeLayout";
 
+import {postsInfo} from "./data/postsInfo"
+import Footer from "./components/Footer";
+
 function App() {
   const [mode, setMode] = useState();
 
@@ -24,11 +21,40 @@ function App() {
   // const [screenEffect, setScreenEffect] = useState(false)
 
   const [open, setOpen] = useState(null);
-  const [selectedProvince, setSelectedProvince] = useState({
-    landingpageModal: "",
-    carsListModal: "",
-  });
-  const [selectedBrand, setSelectedBrand] = useState("");
+  // const [selectedProvince, setSelectedProvince] = useState({
+  //   landingpageModal: "",
+  //   carsListModal: "",
+  // });
+  // const [selectedBrand, setSelectedBrand] = useState("");
+  // const [min, setMin] = useState("");
+  // const [max, setMax] = useState("");
+
+  const [filtered, setFiltered] = useState({
+    min:"",
+    max:"",
+    selectedProvince:{
+      landingpageModal: "",
+      carsListModal: ""      
+    },
+    selectedBrand:""
+  })
+
+//* why infinity? because it makes { Number - infinity(♾️) = negative } , { infinity(♾️) - positive = Number }
+const getNumericPrice = (price) => {
+  const parsedNumber = parseInt(price);
+  return isNaN(parsedNumber) ? Infinity : parsedNumber;
+};
+
+const filteredPosts = postsInfo.filter((post) => {
+    if (filtered.selectedProvince.carsListModal && post.location !== filtered.selectedProvince.carsListModal) return false;
+    if (filtered.selectedBrand && post.brand !== filtered.selectedBrand) return false;
+
+    if (filtered.min && getNumericPrice(post.price) <= parseInt(filtered.min)) return false;
+    if (filtered.max && getNumericPrice(post.price) > parseInt(filtered.max)) return false;
+
+    return true;
+    
+  }).sort((a, b) => getNumericPrice(a.price) - getNumericPrice(b.price));
 
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
@@ -45,7 +71,6 @@ function App() {
     //   setScreenEffect(false)
     // },90)
   };
-  console.log(selectedProvince);
 
   return (
     <MainContext.Provider
@@ -54,10 +79,9 @@ function App() {
         mode,
         open,
         setOpen,
-        selectedProvince,
-        setSelectedProvince,
-        selectedBrand,
-        setSelectedBrand,
+        filtered,
+        setFiltered,
+        filteredPosts
       }}
     >
       <MainLayout
@@ -69,8 +93,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="home" element={<HomeLayout />} />
-          <Route path="cars" element={<CarsListPageContainer/>} />
+          <Route path="cars" element={<CarsListPageContainer />} />
         </Routes>
+        <Footer />
       </MainLayout>
     </MainContext.Provider>
   );

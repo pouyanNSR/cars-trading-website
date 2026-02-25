@@ -1,10 +1,18 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
-import {postsInfo} from "../../../data/postsInfo"
+import { postsInfo } from "../../../data/postsInfo";
+import MainContext from "../../../context";
+import { useContext } from "react";
 
 const CardsList = () => {
+  const { filteredPosts } = useContext(MainContext);
+
+  const setFormattedPrice = (price) => {
+    return new Intl.NumberFormat().format(price);
+  };
+
   return (
     <>
-      {postsInfo.map((post) => (
+      {filteredPosts.map((post) => (
         <Card
           key={post.id}
           sx={{
@@ -15,7 +23,22 @@ const CardsList = () => {
             direction: "rtl",
             borderRadius: 0,
             border: "0.2px solid rgba(0, 0, 0, 0.15)",
-            background: "linear-gradient(rgba(255, 255, 255, 1)",
+            backgroundColor:"background.cards",
+            // background: "linear-gradient(rgba(255, 255, 255, 1))",
+            transition:"background 0.1s ease",
+            "&:hover": {
+              background: "linear-gradient(to right,rgb(190, 255, 200),rgb(254, 171, 228))",
+              borderRight:"2px solid rgb(198, 6, 137)",
+              perspective:1500,
+              boxShadow:"0 0 12px 1px inset rgb(42, 25, 37)",
+              color:"rgb(31, 28, 30)"
+            },
+            "&:hover .year-distance-info": {
+              color:"rgb(46, 45, 46)"
+            },
+            "&:hover .location": {
+              color:"rgb(32, 27, 30)"
+            }
           }}
         >
           {/* Text section */}
@@ -66,6 +89,7 @@ const CardsList = () => {
             <Typography
               fontFamily="shabnam"
               color="text.secondary"
+              className="year-distance-info"
               fontSize={14}
               mt={1}
             >
@@ -90,11 +114,14 @@ const CardsList = () => {
               }}
               mt={0.5}
             >
-              <Typography fontFamily="shabnam" color="text.secondary">
+              <Typography fontFamily="shabnam" color="text.secondary" className="location">
                 {post.location}
               </Typography>
               <Typography fontFamily="shabnam" fontWeight="bold">
-                {post.price} {post.price === "توافقی" ? null : "تومان"}
+                {post.price === "توافقی"
+                  ? post.price
+                  : setFormattedPrice(post.price)}{" "}
+                {post.price === "توافقی" ? null : "تومان"}
               </Typography>
             </Box>
           </CardContent>

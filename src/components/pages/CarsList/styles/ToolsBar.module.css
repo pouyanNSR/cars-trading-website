@@ -128,6 +128,15 @@
   text-align: center;
 }
 
+.clear-filter-btn{
+  all: unset !important;
+  border: 4px solid purple;
+  text-align: center;
+  padding:10px 20px;
+  font-size: 23px;
+  color: rgb(10, 117, 117);
+}
+
 .MuiPaper-root{
   background-color: #311146 !important;
 }

@@ -8,12 +8,27 @@ export default createContext({
     handleThemeChange: () => {},
     open:null,
     setOpen: () => {},
-    selectedProvince:{
-        landingpageModal:"",
-        carsListModal:""
+    filtered:{
+        min:"",
+        max:"",
+        selectedProvince:{
+            landingpageModal: "",
+            carsListModal: ""     
+        },
+        selectedBrand:""
     },
-    setSelectedProvince:() => {},
-    selectedBrand:"",
-    setSelectedBrand:() => {},
+    setFiltered:() => {},
+    filteredPosts:() => {}
+    // selectedProvince:{
+    //     landingpageModal:"",
+    //     carsListModal:""
+    // },
+    // setSelectedProvince:() => {},
+    // selectedBrand:"",
+    // setSelectedBrand:() => {},
+    // min:"",
+    // setMin:() => {},
+    // max:"",
+    // setMax:() => {}
     
 });

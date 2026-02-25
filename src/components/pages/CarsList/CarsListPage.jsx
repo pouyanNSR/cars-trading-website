@@ -16,7 +16,9 @@ const CarsListPage = () => {
           sx={{
             // paddingTop: "30px",
             position: "sticky",
-            top: "100px", // cause we have a header
+            top: "70px", // cause we have a header
+            marginTop:"50px",
+            marginBottom:"150px",
             alignSelf: "flex-start"
           }}
         >

@@ -20,7 +20,7 @@ import styles from "../styledModule/Footer.module.css"
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <Box component="footer" className={styles["footer-root"]} dir="rtl" aria-label="پاورقی سایت">
+        <Box component="footer" id="footer" className={styles["footer-root"]} dir="rtl" aria-label="پاورقی سایت">
             <Container maxWidth="lg">
                 <Box className={styles["footer-glass"]}>
                     <Grid container spacing={4}>
@@ -64,9 +64,9 @@ const Footer = () => {
                             <Typography variant="body2" className={styles["footer-text"]}>
                                 تهران، ایران
                                 <br />
-                                ایمیل: <Link href="mailto:hello@example.com">hello@example.com</Link>
+                                ایمیل: <Link href="mailto:hello@example.com">pooyannasiri8@gmail.com</Link>
                                 <br />
-                                تلفن: <Link dir="ltr" href="tel:+982112345678">+98 21 1234 5678</Link>
+                                تلفن: <Link dir="ltr" href="tel:+982112345678">+981111111111</Link>
                             </Typography>
                             <Box mt={2}  sx={{display:"flex",gap:"5px"}} className="footer-social">
                                 <IconButton aria-label="فیسبوک" className={styles["footer-icon"]}>
