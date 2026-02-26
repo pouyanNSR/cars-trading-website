@@ -33,13 +33,13 @@ const Navbar = () => {
                                 <Link to={"cars"} className="nav-link text-light">همه آگهی ها</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link text-light" href="#">درباره ما</a>
+                                <Link to={"about"} className="nav-link text-light" >درباره ما</Link>
                             </li>
                             <li className="nav-item">
                                 <a href="#footer" className="nav-link text-light">تماس با ما</a>
                             </li>
                             <li className="nav-item" >
-                                <Link to={"/"} state={{scrollTo:"search"}} className="nav-link text-light" href="#">جستجو</Link>
+                                <Link to={"/"} state={{scrollTo:"search"}} className="nav-link text-light">جستجو</Link>
                             </li>
                             {/* <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -13,6 +13,7 @@ import HomeLayout from "./layouts/HomeLayout";
 
 import {postsInfo} from "./data/postsInfo"
 import Footer from "./components/Footer";
+import About from "./components/pages/About/About";
 
 function App() {
   const [mode, setMode] = useState();
@@ -94,6 +95,7 @@ const filteredPosts = postsInfo.filter((post) => {
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="home" element={<HomeLayout />} />
           <Route path="cars" element={<CarsListPageContainer />} />
+          <Route path="about" element={<About/>} />
         </Routes>
         <Footer />
       </MainLayout>
